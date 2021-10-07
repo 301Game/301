@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemController : MonoBehaviour
+public abstract class ItemController : MonoBehaviour
 {
     
     // Start is called before the first frame update
@@ -30,6 +30,7 @@ public class ItemController : MonoBehaviour
         {
 
             Debug.Log("接触碰撞检测");
+            attachEvent();
             /*
              * 后续可主要用于部分素材的调查图标显示，用于提示玩家可探索内容，不建议用于条件触发
              */
@@ -39,7 +40,11 @@ public class ItemController : MonoBehaviour
                 /*
                  * 设置flag，防止游戏剧情中玩家再次点击导致剧情重新播放
                  */
+                enterEvent();
             }
         }
     }
+
+    public abstract void attachEvent();
+    public abstract void enterEvent();
 }
