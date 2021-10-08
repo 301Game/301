@@ -25,7 +25,7 @@ TextureImporter:
     second: items_1_6
   - first:
       213: -9193229562514399801
-    second: door
+    second: airCon
   - first:
       213: -5720545979374513972
     second: shelf
@@ -223,7 +223,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door
+      name: airCon
       rect:
         serializedVersion: 2
         x: 1309
