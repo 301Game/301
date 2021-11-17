@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class PlayerController : MonoBehaviour
+//鎺у埗瑙掕壊
+public class characterchange : MonoBehaviour
 {
     public float speed = 0.1f;//移动速度
     Rigidbody2D rigidbody2d;
@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
+        // Start is called before the first frame update
     }
-
-    // Update is called once per frame
+    // Update is called once per frame`
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
@@ -35,8 +35,15 @@ public class PlayerController : MonoBehaviour
          */
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log("碰撞进入检测");
+        float moveX = Input.GetAxisRaw("Horizontal");//鎺у埗姘村钩绉诲姩鏂瑰悜AD
+        float moveY = Input.GetAxisRaw("Vertical");//鎺у埗鍨傜洿绉诲姩鏂瑰悜WS
+
+        Vector2 position = transform.position;
+        position.x += moveX * speed * Time.deltaTime;
+        position.y += moveY * speed * Time.deltaTime;
+        transform.position = position;
     }
 }
