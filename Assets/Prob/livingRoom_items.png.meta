@@ -1,7 +1,58 @@
 fileFormatVersion: 2
 guid: 17a862427531d6f48a404c83867c2803
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -4487091318887962445
+    second: livingRoom_items_1
+  - first:
+      213: 6302178870520021777
+    second: livingRoom_items_3
+  - first:
+      213: 382544279531673927
+    second: livingRoom_items_4
+  - first:
+      213: 3687373161988098442
+    second: livingRoom_items_7
+  - first:
+      213: 2529880640857854990
+    second: livingRoom_items_11
+  - first:
+      213: -1399634757602951064
+    second: livingRoom_items_12
+  - first:
+      213: -2309342543315098540
+    second: livingRoom_items_13
+  - first:
+      213: -8939886572805345030
+    second: livingRoom_items_14
+  - first:
+      213: 6029071584266874009
+    second: livingRoom_items_15
+  - first:
+      213: -4951636152455419557
+    second: livingRoom_items_16
+  - first:
+      213: 5245764878614174135
+    second: livingRoom_items_23
+  - first:
+      213: -7491872363240231250
+    second: livingRoom_items_24
+  - first:
+      213: 4380293735916225694
+    second: livingRoom_items_25
+  - first:
+      213: -8927064184207908338
+    second: livingRoom_items_28
+  - first:
+      213: 6402795720923776480
+    second: livingRoom_items_29
+  - first:
+      213: 1164821473341367709
+    second: livingRoom_items_35
+  - first:
+      213: 7142278775940419095
+    second: livingRoom_items_36
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,7 +92,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +126,378 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: livingRoom_items_1
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 1681
+        width: 1777
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b8a1f61836aab1c0800000000000000
+      internalID: -4487091318887962445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_3
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 1670
+        width: 269
+        height: 506
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1138158da46d57750800000000000000
+      internalID: 6302178870520021777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_4
+      rect:
+        serializedVersion: 2
+        x: 5290
+        y: 577
+        width: 1765
+        height: 1486
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 749d754def11f4500800000000000000
+      internalID: 382544279531673927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_7
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1364
+        width: 408
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a890c92ba5e2c2330800000000000000
+      internalID: 3687373161988098442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_11
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 177
+        width: 521
+        height: 1445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e04587af901fb1320800000000000000
+      internalID: 2529880640857854990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_12
+      rect:
+        serializedVersion: 2
+        x: 1569
+        y: 1218
+        width: 341
+        height: 437
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86049c18a9f739ce0800000000000000
+      internalID: -1399634757602951064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_13
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 1062
+        width: 444
+        height: 560
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454a109313193ffd0800000000000000
+      internalID: -2309342543315098540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_14
+      rect:
+        serializedVersion: 2
+        x: 2693
+        y: 1051
+        width: 823
+        height: 582
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af037af07842fe380800000000000000
+      internalID: -8939886572805345030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_15
+      rect:
+        serializedVersion: 2
+        x: 3655
+        y: 1051
+        width: 470
+        height: 630
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99ce0a999a09ba350800000000000000
+      internalID: 6029071584266874009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_16
+      rect:
+        serializedVersion: 2
+        x: 4281
+        y: 549
+        width: 718
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b59a9eb7721484bb0800000000000000
+      internalID: -4951636152455419557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_23
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 226
+        width: 608
+        height: 871
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b994052d53bcc840800000000000000
+      internalID: 5245764878614174135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_24
+      rect:
+        serializedVersion: 2
+        x: 1601
+        y: 945
+        width: 280
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaeef7e77c5870890800000000000000
+      internalID: -7491872363240231250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_25
+      rect:
+        serializedVersion: 2
+        x: 2730
+        y: 501
+        width: 622
+        height: 466
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94c72de1fde9cc30800000000000000
+      internalID: 4380293735916225694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_28
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 184
+        width: 492
+        height: 720
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e02ec2d0c62bc1480800000000000000
+      internalID: -8927064184207908338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_29
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 595
+        width: 364
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e58d03e8cc4bd850800000000000000
+      internalID: 6402795720923776480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_35
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 191
+        width: 2025
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95624165f64a2010800000000000000
+      internalID: 1164821473341367709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: livingRoom_items_36
+      rect:
+        serializedVersion: 2
+        x: 4223
+        y: 122
+        width: 998
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71e8dbe84b87e1360800000000000000
+      internalID: 7142278775940419095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
