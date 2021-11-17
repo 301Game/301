@@ -599,7 +599,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: c3e3c2b9ff88f0c40b77f134e0710ecb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -884,6 +884,10 @@ PrefabInstance:
     - target: {fileID: 8404222468526065562, guid: efd0a8f1a1c445149b85d48940da3181, type: 3}
       propertyPath: m_Name
       value: wedding
+      objectReference: {fileID: 0}
+    - target: {fileID: 8404222468526065564, guid: efd0a8f1a1c445149b85d48940da3181, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8404222468526065565, guid: efd0a8f1a1c445149b85d48940da3181, type: 3}
       propertyPath: m_RootOrder
