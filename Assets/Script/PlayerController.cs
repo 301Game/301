@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //æŽ§åˆ¶è§’è‰²
-public class characterchange : MonoBehaviour
+public class PlayController : MonoBehaviour
 {
     public float speed = 0.1f;//ÒÆ¶¯ËÙ¶È
     Rigidbody2D rigidbody2d;
