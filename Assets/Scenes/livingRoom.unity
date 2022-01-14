@@ -683,6 +683,10 @@ PrefabInstance:
       propertyPath: m_FlipX
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5138835247674924693, guid: 5ffacb2063adbce48b0791e8d61a10ed, type: 3}
+      propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5138835247674924695, guid: 5ffacb2063adbce48b0791e8d61a10ed, type: 3}
       propertyPath: m_Name
       value: mother
