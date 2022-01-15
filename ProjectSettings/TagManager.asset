@@ -41,9 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: tools
+  - name: background
     uniqueID: 262389513
     locked: 0
-  - name: back
+  - name: player
     uniqueID: 2424049969
+    locked: 0
+  - name: effect
+    uniqueID: 181530505
     locked: 0
