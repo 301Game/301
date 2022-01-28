@@ -4,16 +4,26 @@ using UnityEngine;
 //鎺у埗瑙掕壊
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
     float speed = 2f;//移动速度
     bool is_move = false;// 人物移动状态
     int direction = 0; //-1表示向左， 1表示向右
     float horizontal;
  
+
     Rigidbody2D rigidbody2d;
     Animator animator;
-    
 
-
+    //将游戏玩家设计为单例
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
