@@ -4,16 +4,34 @@ using UnityEngine;
 //鎺у埗瑙掕壊
 public class PlayerController : MonoBehaviour
 {
-    float speed = 2f;//移动速度
+    public static PlayerController instance;//单例
+
+    public string lastSceneName;
+    float speed = 0.05f;//移动速度
     bool is_move = false;// 人物移动状态
     int direction = 0; //-1表示向左， 1表示向右
     float horizontal;
  
+
     Rigidbody2D rigidbody2d;
     Animator animator;
-    
 
-
+    //将游戏玩家设计为单例
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            if (instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+        DontDestroyOnLoad(gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -25,8 +43,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
-        //Debug.Log("horizontal:" + horizontal);
-        Debug.Log("speed:" + speed);
+
         //判断人物是否移动
         if (Mathf.Abs(horizontal) < 0.0000001f)
         {
@@ -57,7 +74,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 position = rigidbody2d.position;
         if (!is_move) return;
-        position.x = position.x + speed * direction * Time.deltaTime;
+        position.x = position.x + speed * direction;
         rigidbody2d.MovePosition(position);
     }
 
