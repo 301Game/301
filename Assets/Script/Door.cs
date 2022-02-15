@@ -13,7 +13,8 @@ public class Door : MonoBehaviour
             if (other.tag == "Player")
             {
                 PlayerController.instance.lastSceneName = SceneManager.GetActiveScene().name;
-                SceneManager.LoadScene(sceneName);
+                //SceneManager.LoadScene(sceneName);
+                FindObjectOfType<SceneFader>().FadeTo(sceneName);
             }
         }
     }
