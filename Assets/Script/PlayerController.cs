@@ -7,14 +7,20 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;//单例
 
     public string lastSceneName;
+
     float speed = 0.05f;//移动速度
+
     bool is_move = false;// 人物移动状态
+
     int direction = 0; //-1表示向左， 1表示向右
+
     float horizontal;
  
 
     Rigidbody2D rigidbody2d;
     Animator animator;
+
+    public GameObject tipIcon;
 
     //将游戏玩家设计为单例
     private void Awake()
@@ -77,24 +83,14 @@ public class PlayerController : MonoBehaviour
         position.x = position.x + speed * direction;
         rigidbody2d.MovePosition(position);
     }
-
-    private void OnCollisionExit2D(Collision2D collision)
+    public void ShowTipIcon(Transform target)
     {
-        //Debug.Log("接触离开检测");
-        /*
-         * 留用于设置调查图标的消失
-         */
+        tipIcon.transform.position = new Vector2(target.position.x, 0.5f);
+        tipIcon.SetActive(true);
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    public void HideTipIcon()
     {
-        //Debug.Log("碰撞进入检测");
-        //float moveX = Input.GetAxisRaw("Horizontal");//鎺у埗姘村钩绉诲姩鏂瑰悜AD
-        //float moveY = Input.GetAxisRaw("Vertical");//鎺у埗鍨傜洿绉诲姩鏂瑰悜WS
-
-        //Vector2 position = transform.position;
-        //position.x += moveX * speed * Time.deltaTime;
-        //position.y += moveY * speed * Time.deltaTime;
-        //transform.position = position;
+        tipIcon.SetActive(false);
     }
 }

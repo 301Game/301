@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Door : MonoBehaviour
+public class Door : ItemController
 {
     public string sceneName;
     private void OnTriggerStay2D(Collider2D other)

@@ -2,49 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class ItemController : MonoBehaviour
+public class ItemController : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    public GameObject tipIconPrefab;
+    GameObject tipIcon;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
+        Destroy(tipIcon);
         /*
          * 留用于设置调查图标的消失
          */
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerController player = collision.gameObject.GetComponent<PlayerController>();
-        if (player != null)
+        if (collision.tag == "Player")
         {
 
             Debug.Log("接触碰撞检测");
+            tipIcon = Instantiate(tipIconPrefab, new Vector2(transform.position.x, 0.5f), Quaternion.identity, transform);
             attachEvent();
             /*
              * 后续可主要用于部分素材的调查图标显示，用于提示玩家可探索内容，不建议用于条件触发
              */
-            if (Input.GetKeyDown(KeyCode.X))
-            {
-                Debug.Log("摁键检测");
-                /*
-                 * 设置flag，防止游戏剧情中玩家再次点击导致剧情重新播放
-                 */
-                enterEvent();
-            }
+
         }
     }
 
-    public abstract void attachEvent();
-    public abstract void enterEvent();
+    public void attachEvent() {
+    
+    }
+    public void enterEvent() {
+    
+    }
 }

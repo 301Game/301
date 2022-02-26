@@ -228,8 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f3e3e7f982ec543bda8dd2930caed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackImage: {fileID: 1987975072}
   alpha: 0
+  blackImage: {fileID: 1987975072}
 --- !u!114 &347733504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,8 +242,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f3e3e7f982ec543bda8dd2930caed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackImage: {fileID: 1987975072}
   alpha: 0
+  blackImage: {fileID: 1987975072}
 --- !u!114 &347733505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,5 +611,9 @@ PrefabInstance:
       propertyPath: sceneName
       value: livingRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 5505588560723753376, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
+      propertyPath: tipIconPrefab
+      value: 
+      objectReference: {fileID: 8247381176858328103, guid: ec538c1c68fe1094b955aceb22dfc81b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
