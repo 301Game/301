@@ -41,7 +41,5 @@ public class CameraController : MonoBehaviour
             cameraConfiner.m_BoundingShape2D = confiner.GetComponent<Collider2D>();
         }
 
-        
-        Debug.Log(sceneName);
     }
 }

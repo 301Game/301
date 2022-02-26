@@ -18,7 +18,6 @@ public class EndGame : MonoBehaviour
     }
     public void OnClick()
     {
-        UnityEditor.EditorApplication.isPlaying = false; 
-        Application.Quit();
+        
     }
 }
