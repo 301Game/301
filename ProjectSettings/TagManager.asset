@@ -12,10 +12,10 @@ TagManager:
   - tools
   - Water
   - UI
-  - back
-  - Confiner
+  - Background
+  - Foreground
   - Player
-  - 
+  - DetailCG
   - 
   - 
   - 
@@ -42,12 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: background
+  - name: Background
     uniqueID: 262389513
     locked: 0
-  - name: player
+  - name: Player
     uniqueID: 2424049969
     locked: 0
-  - name: effect
+  - name: Effect
     uniqueID: 181530505
+    locked: 0
+  - name: ForeGround
+    uniqueID: 3039385667
+    locked: 0
+  - name: DetailCG
+    uniqueID: 945925023
     locked: 0
