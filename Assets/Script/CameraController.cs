@@ -6,7 +6,6 @@ using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static CameraController instance;
     private CinemachineConfiner cameraConfiner;//±ß½ç×é¼þ
 

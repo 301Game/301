@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 //鎺у埗瑙掕壊
 public class PlayerController : MonoBehaviour
@@ -7,6 +6,8 @@ public class PlayerController : MonoBehaviour
     public static PlayerController instance;//单例
 
     public string lastSceneName;
+    public string theSceneName;
+    public int theSceneIndex;
 
     float speed = 0.05f;//移动速度
 
@@ -19,8 +20,6 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rigidbody2d;
     Animator animator;
-
-    public GameObject tipIcon;
 
     //将游戏玩家设计为单例
     private void Awake()
@@ -83,14 +82,22 @@ public class PlayerController : MonoBehaviour
         position.x = position.x + speed * direction;
         rigidbody2d.MovePosition(position);
     }
-    public void ShowTipIcon(Transform target)
+
+    public void Save()
     {
-        tipIcon.transform.position = new Vector2(target.position.x, 0.5f);
-        tipIcon.SetActive(true);
+        Scene theScene = SceneManager.GetActiveScene();
+        theSceneName = theScene.name;
+        theSceneIndex = theScene.buildIndex;
+
+        SaveLoadSystem.SaveData(this);
     }
 
-    public void HideTipIcon()
+    public void Load()
     {
-        tipIcon.SetActive(false);
+        GameData data = SaveLoadSystem.LoadData();
+        Vector3 position;
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
     }
 }
