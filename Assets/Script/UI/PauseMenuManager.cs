@@ -9,7 +9,7 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject PauseMenuUI;
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !GameManager.Instance.isMenuStopped)
         {
             if (gameIsPaused)
             {
@@ -34,5 +34,14 @@ public class PauseMenuManager : MonoBehaviour
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
+    }
+    public void OnSaveButtonClicked()
+    {
+        SavaManager.Instance.SavePlayerData();
+    }
+
+    public void onLoadButtonClicked()
+    {
+        SavaManager.Instance.LoadPlayerData();
     }
 }

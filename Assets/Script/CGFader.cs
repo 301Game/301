@@ -3,32 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CGFader: Fader
+[RequireComponent(typeof(CanvasGroup))]
+public class CGFader: SceneFader
 {
-    public Image blackImage;
-    public GameObject targetCG = null;
-    bool isHiding = false; //记录Fader状态
-    private void Update()
+    public bool isShow;
+    IEnumerator ShowCoroutine(float time)
     {
-        if(isHiding && targetCG.GetComponent<Image>().color.a < 1)
-        {
-            targetCG.SetActive(false);
-            isHiding = false;
-        }//回收CG图片资源
+        yield return StartCoroutine(FadeOut(time));
+        isShow = true;
     }
 
-    public void Show(GameObject CG)
+    public IEnumerator HideCoroutine(float time)
     {
-        targetCG = CG;
-        targetCG.gameObject.SetActive(true);
-        StartCoroutine(FadeOut(blackImage));
-        StartCoroutine(FadeOut(targetCG.GetComponent<Image>()));
+
+        yield return StartCoroutine(FadeInWithoutDestory(time));  
+        Destroy(transform.GetChild(1).gameObject);
+        GameManager.Instance.isMenuStopped = false;
     }
 
-    public void Hide()
+    public void Show(float time, GameObject obj)
     {
-        isHiding = true;
-        StartCoroutine(FadeIn(blackImage));
-        StartCoroutine(FadeIn(targetCG.GetComponent<Image>()));
+        addChild(obj);
+        GameManager.Instance.isMenuStopped = true;
+        StartCoroutine(ShowCoroutine(time));
+    }
+    public void Hide(float time)
+    {
+        isShow = false;
+        StartCoroutine(HideCoroutine(time));  
+    }
+
+    public void addChild(GameObject child)
+    {
+        Instantiate(child, transform);
     }
 }

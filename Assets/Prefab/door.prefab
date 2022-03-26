@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1407300195586601056}
   - component: {fileID: 1407300195586601085}
-  - component: {fileID: 1407300195586601087}
   - component: {fileID: 5505588560723753376}
   m_Layer: 0
   m_Name: door
@@ -59,19 +58,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.2299023, y: 5.585658}
   m_EdgeRadius: 0
---- !u!114 &1407300195586601087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1407300195586601057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0abf946023f236a4b810603ca620120c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fromScene: 
 --- !u!114 &5505588560723753376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85,4 +71,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipIconPrefab: {fileID: 8247381176858328103, guid: ec538c1c68fe1094b955aceb22dfc81b, type: 3}
-  sceneName: 
+  trasitionSceneName: 
+  destinationType: 0

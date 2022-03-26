@@ -5,17 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Door : ItemController
 {
-    public string sceneName;
-    private void OnTriggerStay2D(Collider2D other)
+    public string trasitionSceneName;
+    public Entrance.entranceType destinationType;
+
+    private void Update()
     {
-        if (Input.GetKey(KeyCode.F))
+        if(hasPlayer && Input.GetKeyDown(KeyCode.F))
         {
-            if (other.tag == "Player")
-            {
-                PlayerController.instance.lastSceneName = SceneManager.GetActiveScene().name;
-                //SceneManager.LoadScene(sceneName);
-                FindObjectOfType<SceneFader>().FadeTo(sceneName);
-            }
+            SceneController.Instance.TransitionToDestination(trasitionSceneName, destinationType);
+            Debug.Log("destination:" + destinationType);
         }
     }
 }

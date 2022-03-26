@@ -3,18 +3,10 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class GameData
+[CreateAssetMenu(fileName ="New Data", menuName = "Game Data/New data")]
+public class GameData: ScriptableObject
 {
-    public string sceneName;
-    public int sceneIndex;
+    //人物位置信息
     public float[] position;
-
-    public GameData(PlayerController player)
-    {
-        sceneName = player.theSceneName;
-        sceneIndex = player.theSceneIndex;
-        position[0] = player.transform.position.x;
-        position[1] = player.transform.position.y;
-        position[2] = player.transform.position.z;
-    }
+    public bool lookAtRight;//人物朝向，true为朝向右；
 }

@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -88,8 +88,9 @@ GameObject:
   - component: {fileID: 7334360921190170252}
   - component: {fileID: 7334360921190170255}
   - component: {fileID: 7334360921190170254}
+  - component: {fileID: 8205202759959618611}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: FadeCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +135,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &7334360921190170252
 MonoBehaviour:
@@ -188,5 +189,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f3e3e7f982ec543bda8dd2930caed1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackImage: {fileID: 7334360921005575112}
-  alpha: 0
+  fadeInTime: 0
+  fadeOutTime: 0
+--- !u!225 &8205202759959618611
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7334360921190170248}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0

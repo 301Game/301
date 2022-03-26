@@ -7,14 +7,14 @@ public class Fader : MonoBehaviour
 {
     [Header("узуж")]
     [SerializeField] private float alpha;
+
+   
     public IEnumerator FadeIn(Image target)
     {
-        Debug.Log("FadeIn");
         alpha = 1;
 
         while (alpha > 0)
         {
-            Debug.Log("Fade");
             alpha -= Time.deltaTime * 0.5f;
             target.color = new Color(target.color.r, target.color.g, target.color.b, alpha);
             yield return new WaitForSeconds(0);

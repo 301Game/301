@@ -6,20 +6,17 @@ using UnityEngine.UI;
 public class Childbed : ItemController
 {
     public GameObject ticket;
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if (Input.GetKey(KeyCode.F) && !ticket.gameObject.activeSelf)
+        if (hasPlayer && Input.GetKeyDown(KeyCode.F) && !CGManager.isShow)
         {
-            Debug.Log("Press F");
-            ticket.transform.parent.GetComponent<CGFader>().Show(ticket);  
-        }//Í¼Æ¬ÎªÒþ²Ø×´Ì¬Ê±¼ì²âÞô½¡ÞôÏÂ×´Ì¬
-
-        if (Input.GetKey(KeyCode.Escape) && ticket.gameObject.activeSelf)
-        {
-            Debug.Log("Press ESC");
-            ticket.transform.parent.GetComponent<CGFader>().Hide();
+            CGManager.Show(1.0f, ticket);
         }
 
+        if (hasPlayer && Input.GetKeyDown(KeyCode.Escape) && CGManager.isShow)
+        {
+            CGManager.Hide(1.0f);
+        }
     }
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
