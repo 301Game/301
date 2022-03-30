@@ -21,7 +21,7 @@ public class SavaManager : Singleton<SavaManager>
             }
             else
             {
-                //FIXME: 发现没有存档
+                //FIXME: 发现没有存档，进行异常处理(比如开始新游戏，比如弹窗)
                 return "livingRoom";
             }
         }

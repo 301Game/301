@@ -37,13 +37,14 @@ public class PlayerController : Singleton<PlayerController>
         GameManager.Instance.RegisterPlayer(playerStates);
         if (SavaManager.Instance.isWaitForLoadPlayerdata)
         {
+            //读取存档
             SavaManager.Instance.LoadPlayerData();
+            //将数据状态同步到gameObject上
             loadPlayerData();
         }
     }
     void Start()
     {
-        
     }
 
     void Update()
