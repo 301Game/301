@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Cinemachine;
+//using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
     // Start is called before the first frame update
     public static CameraController instance;
-    private CinemachineConfiner cameraConfiner;//±ß½ç×é¼þ
+   // private CinemachineConfiner cameraConfiner;//ï¿½ß½ï¿½ï¿½ï¿½ï¿½
 
-    //¼ÇÂ¼µ±Ç°³¡¾°±äÁ¿
+    //ï¿½ï¿½Â¼ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     private Scene activeScene;
     [SerializeField] private GameObject confiner;
     [SerializeField] private string sceneName = "";
@@ -26,19 +26,19 @@ public class CameraController : MonoBehaviour
     }
     void Start()
     {
-        cameraConfiner = GetComponentInChildren<CinemachineConfiner>();
+        //cameraConfiner = GetComponentInChildren<CinemachineConfiner>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //×ÔÊÊÓ¦¸÷³¡¾°±ß½çÉè¶¨
+        //ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß½ï¿½ï¿½è¶¨
         activeScene = SceneManager.GetActiveScene();
         if(sceneName == "" || sceneName != activeScene.name)
         {
             sceneName = activeScene.name;
             confiner = GameObject.FindWithTag("Confiner");
-            cameraConfiner.m_BoundingShape2D = confiner.GetComponent<Collider2D>();
+          //  cameraConfiner.m_BoundingShape2D = confiner.GetComponent<Collider2D>();
         }
 
     }

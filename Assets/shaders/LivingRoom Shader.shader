@@ -21,7 +21,7 @@ Shader "Custom/ColorCompute" {
         return fixed4(c,c,c,1.0f);
     }
 
-    //ÆØ¹â
+    //ï¿½Ø¹ï¿½
     fixed4 Exposure(fixed4 _color,fixed force) {
         fixed r = min(1,max(0,_color.r * pow(2,force)));
         fixed g = min(1,max(0,_color.g * pow(2,force)));
@@ -29,7 +29,7 @@ Shader "Custom/ColorCompute" {
 
         return fixed4(r,g,b,1.0f);
     }
-    //ÑÕÉ«¼ÓÉî
+    //ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½
     fixed4 ColorPlus(fixed4 _color) {
         fixed r = 1 - (1 - _color.r) / _color.r;
         fixed g = 1 - (1 - _color.g) / _color.g;
@@ -38,7 +38,7 @@ Shader "Custom/ColorCompute" {
         return fixed4(r,g,b,1.0f);
     }
 
-    //ÑÕÉ«¼õµ­
+    //ï¿½ï¿½É«ï¿½ï¿½ï¿½ï¿½
     fixed4 ColorMinus(fixed4 _color) {
         fixed r = _color.r + pow(_color.r,2) / (1 - _color.r);
         fixed g = _color.g + pow(_color.g,2) / (1 - _color.g);
@@ -48,7 +48,7 @@ Shader "Custom/ColorCompute" {
     }
 
 
-    //ÂËÉ«
+    //ï¿½ï¿½É«
     fixed4 Screen(fixed4 _color) {
         fixed r = 1 - (pow((1 - _color.r),2));
         fixed g = 1 - (pow((1 - _color.g),2));
@@ -56,14 +56,14 @@ Shader "Custom/ColorCompute" {
         return fixed4(r,g,b,1.0f);
     }
 
-    //ÕýÆ¬µþµ×
+    //ï¿½ï¿½Æ¬ï¿½ï¿½ï¿½ï¿½
     fixed4 Muitiply(fixed4 _color) {
         fixed r = pow(_color.r,2);
         fixed g = pow(_color.g,2);
         fixed b = pow(_color.b,2);
         return fixed4(r,g,b,1.0f);
     }
-    //Ç¿¹â
+    //Ç¿ï¿½ï¿½
     fixed4 ForceLight(fixed4 _color) {
         fixed r = 1 - pow((1 - _color.r),2) / 0.5f;
         fixed g = 1 - pow((1 - _color.g),2) / 0.5f;

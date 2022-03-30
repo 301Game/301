@@ -4,19 +4,19 @@ using UnityEngine;
 //æ§åˆ¶è§’è‰²
 public class PlayerController : MonoBehaviour
 {
-    public static PlayerController instance;//µ¥Àı
+    public static PlayerController instance;//ï¿½ï¿½ï¿½ï¿½
 
     public string lastSceneName;
-    float speed = 0.05f;//ÒÆ¶¯ËÙ¶È
-    bool is_move = false;// ÈËÎïÒÆ¶¯×´Ì¬
-    int direction = 0; //-1±íÊ¾Ïò×ó£¬ 1±íÊ¾ÏòÓÒ
+    float speed = 0.05f;//ï¿½Æ¶ï¿½ï¿½Ù¶ï¿½
+    bool is_move = false;// ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½×´Ì¬
+    int direction = 0; //-1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½
     float horizontal;
  
 
     Rigidbody2D rigidbody2d;
     Animator animator;
 
-    //½«ÓÎÏ·Íæ¼ÒÉè¼ÆÎªµ¥Àı
+    //ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½
     private void Awake()
     {
         if (instance == null)
@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
 
-        //ÅĞ¶ÏÈËÎïÊÇ·ñÒÆ¶¯
+        //ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½Æ¶ï¿½
         if (Mathf.Abs(horizontal) < 0.0000001f)
         {
             animator.SetFloat("speed", 0.0f);
@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetFloat("speed", 1.0f);
             is_move = true;
-            //ÅĞ¶ÏÈËÎïÒÆ¶¯·½Ïò
+            //ï¿½Ğ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½
             if (horizontal > 0)
             {
                 animator.SetFloat("direction", 1.0f);
@@ -80,15 +80,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        //Debug.Log("½Ó´¥Àë¿ª¼ì²â");
+        //Debug.Log("ï¿½Ó´ï¿½ï¿½ë¿ªï¿½ï¿½ï¿½");
         /*
-         * ÁôÓÃÓÚÉèÖÃµ÷²éÍ¼±êµÄÏûÊ§
+         * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½ï¿½Ê§
          */
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        //Debug.Log("Åö×²½øÈë¼ì²â");
+        //Debug.Log("ï¿½ï¿½×²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
         //float moveX = Input.GetAxisRaw("Horizontal");//æ§åˆ¶æ°´å¹³ç§»åŠ¨æ–¹å‘AD
         //float moveY = Input.GetAxisRaw("Vertical");//æ§åˆ¶å‚ç›´ç§»åŠ¨æ–¹å‘WS
 
