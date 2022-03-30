@@ -1,45 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 //鎺у埗瑙掕壊
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     public static PlayerController instance;//单例
 
     public string lastSceneName;
-    float speed = 0.05f;//移动速度
-    bool is_move = false;// 人物移动状态
-    int direction = 0; //-1表示向左， 1表示向右
-    float horizontal;
- 
+    public string theSceneName;
+    public int theSceneIndex;
 
-    Rigidbody2D rigidbody2d;
-    Animator animator;
+    private float speed = 0.05f;//移动速度
+
+    private bool is_move = false;// 人物移动状态
+
+    private int direction = 0; //-1表示向左， 1表示向右
+
+    private float horizontal;
+
+
+    private Rigidbody2D rigidbody2d;
+    private Animator animator;
+    
+    [SerializeField]private PlayerStates playerStates;
 
     //将游戏玩家设计为单例
-    private void Awake()
+    protected override void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            if (instance != this)
-            {
-                Destroy(gameObject);
-            }
-        }
-        DontDestroyOnLoad(gameObject);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
+        base.Awake();
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        // Start is called before the first frame update
+        playerStates = GetComponent<PlayerStates>();
+       
     }
-    // Update is called once per frame`
+    void OnEnable()
+    {
+        GameManager.Instance.RegisterPlayer(playerStates);
+        if (SavaManager.Instance.isWaitForLoadPlayerdata)
+        {
+            //读取存档
+            SavaManager.Instance.LoadPlayerData();
+            //将数据状态同步到gameObject上
+            loadPlayerData();
+        }
+    }
+    void Start()
+    {
+    }
+
     void Update()
     {
         horizontal = Input.GetAxis("Horizontal");
@@ -78,23 +85,33 @@ public class PlayerController : MonoBehaviour
         rigidbody2d.MovePosition(position);
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    //public void Save()
+    //{
+    //    Scene theScene = SceneManager.GetActiveScene();
+    //    theSceneName = theScene.name;
+    //    theSceneIndex = theScene.buildIndex;
+
+    //    SaveLoadSystem.SaveData(this);
+    //}
+
+    //public void Load()
+    //{
+    //    GameData data = SaveLoadSystem.LoadData();
+    //    Vector3 position;
+    //    position.x = data.position[0];
+    //    position.y = data.position[1];
+    //    position.z = data.position[2];
+    //}
+    public void updateDataIntoStates()
     {
-        //Debug.Log("接触离开检测");
-        /*
-         * 留用于设置调查图标的消失
-         */
+        playerStates.position[0] = transform.position.x;
+        playerStates.position[1] = transform.position.y;
+        playerStates.position[2] = transform.position.z;
+        playerStates.lookAtRight = direction > 0 ? true: false;
     }
-
-    private void OnTriggerStay2D(Collider2D other)
+    public void loadPlayerData()
     {
-        //Debug.Log("碰撞进入检测");
-        //float moveX = Input.GetAxisRaw("Horizontal");//鎺у埗姘村钩绉诲姩鏂瑰悜AD
-        //float moveY = Input.GetAxisRaw("Vertical");//鎺у埗鍨傜洿绉诲姩鏂瑰悜WS
-
-        //Vector2 position = transform.position;
-        //position.x += moveX * speed * Time.deltaTime;
-        //position.y += moveY * speed * Time.deltaTime;
-        //transform.position = position;
+        transform.position = new Vector3(playerStates.position[0], playerStates.position[1], playerStates.position[2]);
+        //if(playerStates.lookAtRight) 
     }
 }

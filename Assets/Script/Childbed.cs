@@ -3,21 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Childbed : MonoBehaviour
+public class Childbed : ItemController
 {
-    public Image ticket;
-    private bool isHide = true;
-    private void OnTriggerStay2D(Collider2D collision)
+    public GameObject ticket;
+    private void Update()
     {
-        if (Input.GetKey(KeyCode.F) && !ticket.gameObject.activeSelf)
+        if (hasPlayer && Input.GetKeyDown(KeyCode.F) && !CGManager.isShow)
         {
-            ticket.gameObject.SetActive(true);
-            ticket.transform.parent.gameObject.SetActive(true);
-        }//Í¼Æ¬ÎªÒþ²Ø×´Ì¬Ê±¼ì²âÞô½¡ÞôÏÂ×´Ì¬
+            CGManager.Show(1.0f, ticket);
+        }
 
-        if (Input.GetKey(KeyCode.Escape) && ticket.gameObject.activeSelf){
-            ticket.transform.parent.gameObject.SetActive(false);
-            ticket.gameObject.SetActive(false);
+        if (hasPlayer && Input.GetKeyDown(KeyCode.Escape) && CGManager.isShow)
+        {
+            CGManager.Hide(1.0f);
         }
     }
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    PlayerController.instance.ShowTipIcon(transform);
+    //}
+
+    //private void OnTriggerExit2D(Collider2D collision)
+    //{
+    //    PlayerController.instance.HideTipIcon();
+    //}
 }

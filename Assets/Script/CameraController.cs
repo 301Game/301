@@ -6,7 +6,6 @@ using Cinemachine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
     public static CameraController instance;
     private CinemachineConfiner cameraConfiner;//±ß½ç×é¼þ
 
@@ -17,12 +16,12 @@ public class CameraController : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null) instance = this;
-        else
-        {
-            Destroy(gameObject);
-        }
-        DontDestroyOnLoad(gameObject);
+        //if (instance == null) instance = this;
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
+        //DontDestroyOnLoad(gameObject);
     }
     void Start()
     {

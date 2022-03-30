@@ -5,15 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void StartGame()
+    public void OnStartButtonClicked()
     {
-        SceneManager.LoadScene("livingRoom");
+        Debug.Log("StartButtonClicked");
+        SceneController.Instance.CreatNewGame();
     }
     public void EndGame()
     {
         UnityEditor.EditorApplication.isPlaying = false;
         Application.Quit();
     }
-    // Start is called before the first frame update
+    public void OnLoadButtonClicked()
+    {
+        SceneController.Instance.LoadGame();
+    }
 
 }
