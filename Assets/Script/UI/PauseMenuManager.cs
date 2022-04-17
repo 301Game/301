@@ -1,15 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
+using Fungus;
 
 public class PauseMenuManager : MonoBehaviour
 {
     public static bool gameIsPaused;
 
     public GameObject PauseMenuUI;
+
+    private Flowchart flowchart;
+    private void Awake()
+    {
+        flowchart = GameObject.Find("Flowchart").GetComponent<Flowchart>();
+    }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !GameManager.Instance.isMenuStopped)
+        if (Input.GetKeyDown(KeyCode.Escape) && isShowable())
         {
             if (gameIsPaused)
             {
@@ -24,6 +30,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Resume()
     {
+        
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
@@ -31,6 +38,7 @@ public class PauseMenuManager : MonoBehaviour
 
     void Pause()
     {
+        
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         gameIsPaused = true;
@@ -40,8 +48,13 @@ public class PauseMenuManager : MonoBehaviour
         SavaManager.Instance.SavePlayerData();
     }
 
-    public void onLoadButtonClicked()
+    public void OnLoadButtonClicked()
     {
         SavaManager.Instance.LoadPlayerData();
+    }
+    private bool isShowable()
+    {
+        if (flowchart.HasExecutingBlocks()) return false;
+        return true;
     }
 }
