@@ -686,59 +686,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 868493088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Script: {fileID: 11500000, guid: 1902400ccc99b45d69ad01cb86b57d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 1
   indentLevel: 0
-  description: 
-  targetObject: {fileID: 2143794918933394676}
-  targetComponentAssemblyName: AudioManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: AudioManager
-  targetMethod: PlayMusic
-  targetMethodText: 'PlayMusic (AudioClip, Single): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: UnityEngine.AudioClip, UnityEngine.AudioModule, Version=0.0.0.0,
-        Culture=neutral, PublicKeyToken=null
-      typeFullname: UnityEngine.AudioClip
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 8300000, guid: 8db878650695b094380af3a30148231f, type: 3}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  - objValue:
-      typeAssemblyname: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Single
-      intValue: 0
-      boolValue: 0
-      floatValue: 2
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
+  musicClip: {fileID: 8300000, guid: 8db878650695b094380af3a30148231f, type: 3}
+  atTime: 0
+  loop: 1
+  fadeDuration: 1
 --- !u!114 &868493090
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -805,10 +761,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 868493091}
-  selectedCommands:
-  - {fileID: 868493089}
+  selectedBlocks: []
+  selectedCommands: []
   variables: []
   description: 
   stepPause: 0
@@ -2197,21 +2151,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2143794917725305267, guid: 53ce14210d9d65043adc7ddaedfc7930, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2143794917725305293, guid: 53ce14210d9d65043adc7ddaedfc7930, type: 3}
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53ce14210d9d65043adc7ddaedfc7930, type: 3}
---- !u!1 &2143794918933394676 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2143794917725305293, guid: 53ce14210d9d65043adc7ddaedfc7930, type: 3}
-  m_PrefabInstance: {fileID: 2143794918933394675}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2614915150979958957
 PrefabInstance:
   m_ObjectHideFlags: 0

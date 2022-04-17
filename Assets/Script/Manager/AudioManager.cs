@@ -5,24 +5,19 @@ using Fungus;
 
 public class AudioManager : Singleton<AudioManager>
 {
-    private AudioSource audioSource;
+    //private AudioSource audioSource;
+    private MusicManager musicManager;
+    public bool isMusicOn;
+    public float musicVolume;
 
-    private bool isMusicOn { get { return GameManager.Instance.isMusicOn; } set { GameManager.Instance.isMusicOn = value; } }
-    private float musicVolume { get { return GameManager.Instance.musicVolume; } set { GameManager.Instance.musicVolume = value; } }
-
-    private bool isAudioOn { get { return GameManager.Instance.isAudioOn; } set { GameManager.Instance.isAudioOn = value; } }
-    private float audioVolume { get { return GameManager.Instance.audioVolume; } set { GameManager.Instance.audioVolume = value; } }
-protected override void Awake()
+    public bool isAudioOn;
+    public float audioVolume;
+    protected override void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-    }
-    private void OnEnable()
-    {
-        Debug.Log("onEnable");
-    }
-    private void OnDisable()
-    {
-        Debug.Log("OnDisable");
+        base.Awake();
+        DontDestroyOnLoad(this);
+        musicManager = FungusManager.Instance.MusicManager;
+        getAudioSettingData();
     }
 
     public void SetMusicOn(bool value)
@@ -51,7 +46,7 @@ protected override void Awake()
         if (isAudioOn)
         {
             Debug.Log(audioVolume);
-            audioSource.PlayOneShot(clip, audioVolume);
+            //audioSource.PlayOneShot(clip, audioVolume);
         }
         
     }
@@ -59,49 +54,57 @@ protected override void Awake()
     {
         if (isMusicOn)
         {
-            audioSource.volume = musicVolume;
+            musicManager.SetAudioVolume(musicVolume, 0, null);
         }
         else
         {
-            audioSource.volume = 0f;
+            musicManager.SetAudioVolume(0f, 0, null);
         }
-        
     }
-    public void PlayMusic(AudioClip clip, float time)
+    private void getAudioSettingData()
     {
-        if(clip != null)
-        {
-            StartCoroutine(SwitchMusic(clip,time));
-        }
-        else
-        {
-            StartCoroutine(FadeInMusic(clip, time));
-        }
-    }
+        //FIXME:从本地存储中读取设定
+        isMusicOn = true;
+        musicVolume = 1f;
+        isAudioOn = true;
+        audioVolume = 1f;
+}
+    //}
+    //public void PlayMusic(AudioClip clip, float time)
+    //{
+    //    if(clip != null)
+    //    {
+    //        StartCoroutine(SwitchMusic(clip,time));
+    //    }
+    //    else
+    //    {
+    //        StartCoroutine(FadeInMusic(clip, time));
+    //    }
+    //}
 
-    IEnumerator SwitchMusic(AudioClip clip, float time)
-    {
-        yield return StartCoroutine(FadeOutMusic(time / 2));
-        yield return StartCoroutine(FadeInMusic(clip, time / 2));
-    }
-    IEnumerator FadeOutMusic(float time)
-    {
-        while(audioSource.volume > 0)
-        {
-            audioSource.volume = Mathf.Lerp(audioSource.volume, 0, time);
-            yield return null;
-        }
+    //IEnumerator SwitchMusic(AudioClip clip, float time)
+    //{
+    //    yield return StartCoroutine(FadeOutMusic(time / 2));
+    //    yield return StartCoroutine(FadeInMusic(clip, time / 2));
+    //}
+    //IEnumerator FadeOutMusic(float time)
+    //{
+    //    while(audioSource.volume > 0)
+    //    {
+    //        audioSource.volume = Mathf.Lerp(audioSource.volume, 0, time);
+    //        yield return null;
+    //    }
 
-    }
-    IEnumerator FadeInMusic(AudioClip clip, float time)
-    {
-        audioSource.clip = clip;
-        audioSource.volume = 0;
-        audioSource.Play();
-        while (audioSource.volume < musicVolume)
-        {
-            audioSource.volume = Mathf.Lerp(0, musicVolume, time);
-            yield return null;
-        }
-    }
+    //}
+    //IEnumerator FadeInMusic(AudioClip clip, float time)
+    //{
+    //    audioSource.clip = clip;
+    //    audioSource.volume = 0;
+    //    audioSource.Play();
+    //    while (audioSource.volume < musicVolume)
+    //    {
+    //        audioSource.volume = Mathf.Lerp(0, musicVolume, time);
+    //        yield return null;
+    //    }
+    //}
 }

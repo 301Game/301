@@ -48,7 +48,7 @@ public class PauseMenuManager : MonoBehaviour
         SavaManager.Instance.SavePlayerData();
     }
 
-    public void onLoadButtonClicked()
+    public void OnLoadButtonClicked()
     {
         SavaManager.Instance.LoadPlayerData();
     }

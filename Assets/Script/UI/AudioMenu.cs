@@ -20,29 +20,32 @@ public class AudioMenu : MonoBehaviour
     }
     private void Start()
     {
-        musicToggle.isOn = GameManager.Instance.isMusicOn;
-        musicSlider.value = GameManager.Instance.musicVolume;
-        audioToggle.isOn = GameManager.Instance.isAudioOn;
-        audioSlider.value = GameManager.Instance.audioVolume;
+        musicToggle.isOn = AudioManager.Instance.isMusicOn;
+        musicSlider.value = AudioManager.Instance.musicVolume;
+        audioToggle.isOn = AudioManager.Instance.isAudioOn;
+        audioSlider.value = AudioManager.Instance.audioVolume;
     }
    
     public void MusicToggleValueChanged()
     {
-        GameManager.Instance.isMusicOn = musicToggle.isOn;
+        AudioManager.Instance.SetMusicOn(musicToggle.isOn);
     }
 
     public void MusicSliderValueChanged()
     {
-        GameManager.Instance.musicVolume = musicSlider.value;
+        //AudioManager.Instance.musicVolume = musicSlider.value;
+        AudioManager.Instance.SetMusicVolume(musicSlider.value);
     }
 
     public void AudioToggleValueChanged()
     {
-        GameManager.Instance.isAudioOn = audioToggle.isOn;
+        //AudioManager.Instance.isAudioOn = audioToggle.isOn;
+        AudioManager.Instance.SetAudioOn(audioToggle.isOn);
     }
 
     public void AudioSliderValueChanged()
     {
-        GameManager.Instance.audioVolume = audioSlider.value;
+        //AudioManager.Instance.audioVolume = audioSlider.value;
+        AudioManager.Instance.SetAudioVolume(audioSlider.value);
     }
 }
