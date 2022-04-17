@@ -1,5 +1,6 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using Fungus;
 //鎺у埗瑙掕壊
 public class PlayerController : Singleton<PlayerController>
 {
@@ -17,12 +18,13 @@ public class PlayerController : Singleton<PlayerController>
 
     private float horizontal;
 
-
     private Rigidbody2D rigidbody2d;
     private Animator animator;
     
     [SerializeField]private PlayerStates playerStates;
 
+    private Flowchart flowchart;
+    //private PauseMenuManager pauseMenu;
     //将游戏玩家设计为单例
     protected override void Awake()
     {
@@ -30,10 +32,14 @@ public class PlayerController : Singleton<PlayerController>
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerStates = GetComponent<PlayerStates>();
+
+        flowchart = GameObject.Find("Flowchart").GetComponent<Flowchart>();
+        //pauseMenu = GameObject.Find("Menu UI").GetComponent<PauseMenuManager>();
        
     }
     void OnEnable()
     {
+        Debug.Log(GameManager.IsInitialized);
         GameManager.Instance.RegisterPlayer(playerStates);
         if (SavaManager.Instance.isWaitForLoadPlayerdata)
         {
@@ -49,6 +55,11 @@ public class PlayerController : Singleton<PlayerController>
 
     void Update()
     {
+        if (!isMovable())
+        {
+            StopAnimation();
+            return;
+        }
         horizontal = Input.GetAxis("Horizontal");
 
         //判断人物是否移动
@@ -79,10 +90,13 @@ public class PlayerController : Singleton<PlayerController>
 
     void FixedUpdate()
     {
-        Vector2 position = rigidbody2d.position;
-        if (!is_move) return;
-        position.x = position.x + speed * direction;
-        rigidbody2d.MovePosition(position);
+        if (isMovable())
+        {
+            Vector2 position = rigidbody2d.position;
+            if (!is_move) return;
+            position.x = position.x + speed * direction;
+            rigidbody2d.MovePosition(position);
+        }   
     }
 
     //public void Save()
@@ -113,5 +127,20 @@ public class PlayerController : Singleton<PlayerController>
     {
         transform.position = new Vector3(playerStates.position[0], playerStates.position[1], playerStates.position[2]);
         //if(playerStates.lookAtRight) 
+    }
+
+    private void StopAnimation()
+    {
+        animator.SetFloat("speed", 0f);
+    }
+    private void OnGUI()
+    {
+
+    }
+    private bool isMovable()
+    {
+        if (flowchart.HasExecutingBlocks()) return false;
+        if (PauseMenuManager.gameIsPaused) return false;
+        return true;
     }
 }

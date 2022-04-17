@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 
+
 public class GameManager : Singleton<GameManager>
 {
     public PlayerStates playerStates;
-    public bool isMenuStopped;
     private CinemachineVirtualCamera virtualCamera;
+
+    public bool isMusicOn = true;
+    public float musicVolume = 1f;
+
+    public bool isAudioOn;
+    public float audioVolume;
     protected override void Awake()
     {
         base.Awake();
@@ -25,4 +31,26 @@ public class GameManager : Singleton<GameManager>
             virtualCamera.Follow = playerStates.transform; 
         }
     }
+
+    //public void InterEventBegin()
+    //{
+    //    menuEnable = false;
+    //    characterMovable = false;
+    //}
+    //public void InterEventEnd()
+    //{
+    //    menuEnable = true;
+    //    characterMovable = true;
+    //}
+    //public void menuOut()
+    //{
+    //    characterMovable = false;
+    //    keyEnterEnable = false;
+    //}
+
+    //public void menuHide()
+    //{
+    //    characterMovable = true;
+    //    keyEnterEnable = true;
+    //}
 }
