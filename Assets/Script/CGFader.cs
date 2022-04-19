@@ -1,0 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+[RequireComponent(typeof(CanvasGroup))]
+public class CGFader: SceneFader
+{
+    public bool isShow;
+    IEnumerator ShowCoroutine(float time)
+    {
+        yield return StartCoroutine(FadeOut(time));
+        isShow = true;
+    }
+
+    public IEnumerator HideCoroutine(float time)
+    {
+
+        yield return StartCoroutine(FadeInWithoutDestory(time));  
+        Destroy(transform.GetChild(1).gameObject);
+        GameManager.Instance.isMenuStopped = false;
+    }
+
+    public void Show(float time, GameObject obj)
+    {
+        addChild(obj);
+        GameManager.Instance.isMenuStopped = true;
+        StartCoroutine(ShowCoroutine(time));
+    }
+    public void Hide(float time)
+    {
+        isShow = false;
+        StartCoroutine(HideCoroutine(time));  
+    }
+
+    public void addChild(GameObject child)
+    {
+        Instantiate(child, transform);
+    }
+}
