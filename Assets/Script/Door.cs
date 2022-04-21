@@ -8,12 +8,13 @@ public class Door : ItemController
     public string trasitionSceneName;
     public Entrance.entranceType destinationType;
 
-    private void Update()
+    private void Awake()
     {
-        if(hasPlayer && Input.GetKeyDown(KeyCode.F))
-        {
-            SceneController.Instance.TransitionToDestination(trasitionSceneName, destinationType);
-            Debug.Log("destination:" + destinationType);
-        }
+        interKeyEvents.AddListener(Transition);
+    }
+    private void Transition()
+    {
+        SceneController.Instance.TransitionToDestination(trasitionSceneName, destinationType);
+        Debug.Log("destination:" + destinationType);
     }
 }

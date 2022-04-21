@@ -39,8 +39,8 @@ public class SceneController : Singleton<SceneController>
     }
     private IEnumerator TransitionScene(string sceneName, Entrance.entranceType type)
     {
-        //TODO:±£´æÊý¾Ý
-        //TODO:¼ÓÈëFader
+        //TODO:ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+        //TODO:ï¿½ï¿½ï¿½ï¿½Fader
         SceneFader fader = Instantiate(faderPrefab);
         yield return StartCoroutine(fader.FadeOut(1.0f));
         yield return SceneManager.LoadSceneAsync(sceneName);

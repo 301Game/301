@@ -5,12 +5,12 @@ using UnityEngine;
 public class SavaManager : Singleton<SavaManager>
 {
     public bool isWaitForLoadPlayerdata;
+    public AudioData audioData;
     protected override void Awake()
     {
         base.Awake();
         DontDestroyOnLoad(this);
     }
-
     public string savedSceneName
     {
         get
@@ -21,7 +21,7 @@ public class SavaManager : Singleton<SavaManager>
             }
             else
             {
-                //FIXME: ·¢ÏÖÃ»ÓÐ´æµµ£¬½øÐÐÒì³£´¦Àí(±ÈÈç¿ªÊ¼ÐÂÓÎÏ·£¬±ÈÈçµ¯´°)
+                //FIXME: ï¿½ï¿½ï¿½ï¿½Ã»ï¿½Ð´æµµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ì³£ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ç¿ªÊ¼ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½çµ¯ï¿½ï¿½)
                 return "livingRoom";
             }
         }

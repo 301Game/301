@@ -17,17 +17,24 @@ public class CGFader: SceneFader
     {
 
         yield return StartCoroutine(FadeInWithoutDestory(time));  
-        Destroy(transform.GetChild(1).gameObject);
-        GameManager.Instance.isMenuStopped = false;
     }
 
-    public void Show(float time, GameObject obj)
+    //public void Show(float time, GameObject obj)
+    //{
+    //    addChild(obj);
+    //    GameManager.Instance.isMenuStopped = true;
+    //    StartCoroutine(ShowCoroutine(time));
+    //}
+    public void Show(float time = 0.25f)
     {
-        addChild(obj);
-        GameManager.Instance.isMenuStopped = true;
         StartCoroutine(ShowCoroutine(time));
     }
-    public void Hide(float time)
+    public void ShowDefault()
+    {
+        Show();
+    }
+
+    public void Hide(float time = 0.25f)
     {
         isShow = false;
         StartCoroutine(HideCoroutine(time));  

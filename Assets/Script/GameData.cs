@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="New Data", menuName = "Game Data/New data")]
 public class GameData: ScriptableObject
 {
-    //人物位置信息
+    //锟斤拷锟斤拷位锟斤拷锟斤拷息
     public float[] position;
-    public bool lookAtRight;//人物朝向，true为朝向右；
+    public bool lookAtRight;//锟斤拷锟斤朝锟斤拷true为锟斤拷锟斤拷锟揭ｏ拷
 }
