@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Confiner
+  - Icon
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - tools
+  - Water
+  - UI
+  - Background
+  - Foreground
+  - Player
+  - DetailCG
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Sky
+    uniqueID: 1371671887
+    locked: 0
+  - name: Background
+    uniqueID: 262389513
+    locked: 0
+  - name: Background_2
+    uniqueID: 2918294307
+    locked: 0
+  - name: Player
+    uniqueID: 2424049969
+    locked: 0
+  - name: Effect
+    uniqueID: 181530505
+    locked: 0
+  - name: ForeGround
+    uniqueID: 3039385667
+    locked: 0
+  - name: DetailCG
+    uniqueID: 945925023
+    locked: 0
