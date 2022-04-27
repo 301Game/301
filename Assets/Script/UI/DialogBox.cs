@@ -27,6 +27,7 @@ public class DialogBox : Singleton<DialogBox>
     public void Say(string content, float fadeDuration, float waitTime)
     {
         dialogText.SetText(content);
+        Debug.Log("设置文本成功");
         m_fadeDuration = fadeDuration;
         LeanTween.value(0, 1, m_fadeDuration).setOnUpdate(
             (float updateAlpha) =>

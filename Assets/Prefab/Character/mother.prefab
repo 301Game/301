@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38d4b6a8284c64a43891e5cbb989f494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogText: {fileID: 0}
+  dialogText: {fileID: 2926193133258109158}
 --- !u!1 &2801726015130391350
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,8 +194,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u7EC8\u4E8E\u6B63\u5E38\u4E86\uFF0C\u6CEA\u76EE\u5B50"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 0}
-  m_sharedMaterial: {fileID: 0}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
