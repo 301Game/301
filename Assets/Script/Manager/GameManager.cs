@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Cinemachine;
+//using Cinemachine;
 
 
 public class GameManager : Singleton<GameManager>
 {
     public PlayerStates playerStates;
-    private CinemachineVirtualCamera virtualCamera;
+   // private CinemachineVirtualCamera virtualCamera;
 
     public bool isMusicOn = true;
     public float musicVolume = 1f;
@@ -24,11 +24,11 @@ public class GameManager : Singleton<GameManager>
     {
         playerStates = player;
 
-        virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
-        if(virtualCamera != null)
+       // virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
+     //   if(virtualCamera != null)
         {
             //�趨�������
-            virtualCamera.Follow = playerStates.transform; 
+          //  virtualCamera.Follow = playerStates.transform; 
         }
     }
 

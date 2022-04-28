@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Fungus;
+//using Fungus;
 
 public class AudioManager : Singleton<AudioManager>
 {
     //private AudioSource audioSource;
-    private MusicManager musicManager;
+   // private MusicManager musicManager;
     public bool isMusicOn;
     public float musicVolume;
 
@@ -16,7 +16,7 @@ public class AudioManager : Singleton<AudioManager>
     {
         base.Awake();
         DontDestroyOnLoad(this);
-        musicManager = FungusManager.Instance.MusicManager;
+     //   musicManager = FungusManager.Instance.MusicManager;
         getAudioSettingData();
     }
 
@@ -54,11 +54,11 @@ public class AudioManager : Singleton<AudioManager>
     {
         if (isMusicOn)
         {
-            musicManager.SetAudioVolume(musicVolume, 0, null);
+           // musicManager.SetAudioVolume(musicVolume, 0, null);
         }
         else
         {
-            musicManager.SetAudioVolume(0f, 0, null);
+           // musicManager.SetAudioVolume(0f, 0, null);
         }
     }
     private void getAudioSettingData()

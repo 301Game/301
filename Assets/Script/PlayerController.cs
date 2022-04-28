@@ -1,6 +1,6 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
-using Fungus;
+//using Fungus;
 //控制角色
 public class PlayerController : Singleton<PlayerController>
 {
@@ -18,7 +18,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private Rigidbody2D rigidbody2d;
     private Animator animator;
-    private Flowchart flowchart;
+   // private Flowchart flowchart;
     
     [SerializeField]private PlayerStates playerStates;
     
@@ -28,7 +28,7 @@ public class PlayerController : Singleton<PlayerController>
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerStates = GetComponent<PlayerStates>();
-        flowchart = FindObjectOfType<Flowchart>();
+       // flowchart = FindObjectOfType<Flowchart>();
        
     }
     void OnEnable()
@@ -102,7 +102,7 @@ public class PlayerController : Singleton<PlayerController>
     }
     private bool isMovable()
     {
-        if (flowchart.HasExecutingBlocks()) return false;
+      //  if (flowchart.HasExecutingBlocks()) return false;
         if (PauseMenu.gameIsPaused) return false;
         if(TipsBook.IsInitialized && TipsBook.Instance.isActive) return false;
         
