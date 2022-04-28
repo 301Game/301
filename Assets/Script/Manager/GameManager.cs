@@ -29,7 +29,6 @@ public class GameManager : Singleton<GameManager>
         virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
         if(virtualCamera != null)
         {
-            //�趨�������
             virtualCamera.Follow = playerStates.transform; 
         }
     }

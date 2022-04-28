@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Fader : MonoBehaviour
 {
-    [Header("узуж")]
+    [Header("О©╫О©╫О©╫О©╫")]
     [SerializeField] private float alpha;
 
    
