@@ -67,6 +67,7 @@ namespace Fungus
             var savePointData = Create(_savePointKey, _savePointDescription, _sceneName);
 
             // Look for a SaveData component in the scene to populate the save data items.
+            //var saveData = GameObject.FindObjectOfType<SaveData>();
             var saveData = GameObject.FindObjectOfType<SaveData>();
             if (saveData != null)
             {

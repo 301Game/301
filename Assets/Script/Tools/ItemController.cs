@@ -61,7 +61,10 @@ public class ItemController : MonoBehaviour
         foreach(var chart in FindObjectsOfType<Flowchart>())
         {
             if (chart.HasExecutingBlocks()) return false;
+            
         }
         return true;
+
+      
     }
 }
