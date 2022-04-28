@@ -6,18 +6,35 @@ using UnityEngine;
 public class AudioManager : Singleton<AudioManager>
 {
     //private AudioSource audioSource;
+<<<<<<< HEAD
    // private MusicManager musicManager;
     public bool isMusicOn;
     public float musicVolume;
+=======
+    private MusicManager musicManager;
+    public AudioData_SO audioData;
 
-    public bool isAudioOn;
-    public float audioVolume;
+    #region public data from audioData
+    public bool isMusicOn { get { return audioData.isMusicOn; } set { audioData.isMusicOn = value; } }
+    public float musicVolume { get { return audioData.musicVolume; } set { audioData.musicVolume = value; } }
+
+    public bool isAudioOn { get{ return audioData.isAudioOn; } set { audioData.isAudioOn = value; } }
+
+    public float audioVolume { get { return audioData.audioVolume; } set { audioData.audioVolume = value; } }
+    #endregion
+>>>>>>> e5cfa3a7acdd009d62a46b0ed0429a33a7c66636
+
     protected override void Awake()
     {
         base.Awake();
         DontDestroyOnLoad(this);
+<<<<<<< HEAD
      //   musicManager = FungusManager.Instance.MusicManager;
         getAudioSettingData();
+=======
+        musicManager = FungusManager.Instance.MusicManager;
+        MusicSettingChanged();
+>>>>>>> e5cfa3a7acdd009d62a46b0ed0429a33a7c66636
     }
 
     public void SetMusicOn(bool value)
@@ -50,8 +67,14 @@ public class AudioManager : Singleton<AudioManager>
         }
         
     }
+
     private void MusicSettingChanged()
     {
+        if(audioData == null)
+        {
+            Debug.LogError("Please set the Data File In Inspector");
+            return;
+        }
         if (isMusicOn)
         {
            // musicManager.SetAudioVolume(musicVolume, 0, null);
@@ -61,48 +84,4 @@ public class AudioManager : Singleton<AudioManager>
            // musicManager.SetAudioVolume(0f, 0, null);
         }
     }
-    private void getAudioSettingData()
-    {
-        //FIXME:�ӱ��ش洢�ж�ȡ�趨
-        AudioData audioData;
-        audioData=Resources.Load<AudioData>("Music Data/New data");
-    }
-    //}
-    //public void PlayMusic(AudioClip clip, float time)
-    //{
-    //    if(clip != null)
-    //    {
-    //        StartCoroutine(SwitchMusic(clip,time));
-    //    }
-    //    else
-    //    {
-    //        StartCoroutine(FadeInMusic(clip, time));
-    //    }
-    //}
-
-    //IEnumerator SwitchMusic(AudioClip clip, float time)
-    //{
-    //    yield return StartCoroutine(FadeOutMusic(time / 2));
-    //    yield return StartCoroutine(FadeInMusic(clip, time / 2));
-    //}
-    //IEnumerator FadeOutMusic(float time)
-    //{
-    //    while(audioSource.volume > 0)
-    //    {
-    //        audioSource.volume = Mathf.Lerp(audioSource.volume, 0, time);
-    //        yield return null;
-    //    }
-
-    //}
-    //IEnumerator FadeInMusic(AudioClip clip, float time)
-    //{
-    //    audioSource.clip = clip;
-    //    audioSource.volume = 0;
-    //    audioSource.Play();
-    //    while (audioSource.volume < musicVolume)
-    //    {
-    //        audioSource.volume = Mathf.Lerp(0, musicVolume, time);
-    //        yield return null;
-    //    }
-    //}
 }

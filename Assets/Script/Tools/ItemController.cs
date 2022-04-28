@@ -60,8 +60,15 @@ public class ItemController : MonoBehaviour
         if (TipsBook.Instance.isActive) return false;
        foreach(var chart in FindObjectsOfType<Flowchart>())
         {
+<<<<<<< HEAD
            if (chart.HasExecutingBlocks()) return false;
+=======
+            if (chart.HasExecutingBlocks()) return false;
+            
+>>>>>>> e5cfa3a7acdd009d62a46b0ed0429a33a7c66636
         }
         return true;
+
+      
     }
 }

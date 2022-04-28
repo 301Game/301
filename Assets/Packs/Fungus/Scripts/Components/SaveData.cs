@@ -40,6 +40,8 @@ namespace Fungus
                 var narrativeLogItem = SaveDataItem.Create(NarrativeLogKey, FungusManager.Instance.NarrativeLog.GetJsonHistory());
                 saveDataItems.Add(narrativeLogItem);
             }
+
+
         }
 
         /// <summary>

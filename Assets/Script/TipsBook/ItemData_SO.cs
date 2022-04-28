@@ -1,4 +1,3 @@
-
 using UnityEngine;
 
 [System.Serializable]
@@ -11,3 +10,4 @@ public class ItemData_SO : ScriptableObject
     public string ItemDesc;
     public Sprite ItemImg;
 }
+

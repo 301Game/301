@@ -5,7 +5,16 @@ using UnityEngine;
 public class SavaManager : Singleton<SavaManager>
 {
     public bool isWaitForLoadPlayerdata;
-    public AudioData audioData;
+    
+
+    public static string STORAGER_DIRECTORY
+    {
+        get { return Application.persistentDataPath + "/301/"; }
+    }
+    public static string AudioPath
+    {
+        get{ return STORAGER_DIRECTORY + "Audio.json";}
+    }
     protected override void Awake()
     {
         base.Awake();
@@ -26,14 +35,14 @@ public class SavaManager : Singleton<SavaManager>
             }
         }
     }
-    public void Save(Object obj, string key)
+    public void SaveObj(Object obj, string key)
     {
         var data = JsonUtility.ToJson(obj);
         PlayerPrefs.SetString(key, data);
         PlayerPrefs.Save();
     }
 
-    public void Load(Object obj, string key)
+    public void LoadObj(Object obj, string key)
     {
         if (PlayerPrefs.HasKey(key) && obj != null)
         {
@@ -43,17 +52,56 @@ public class SavaManager : Singleton<SavaManager>
     public void SavePlayerData()
     {
         GameManager.Instance.playerStates.gameObject.GetComponent<PlayerController>()?.updateDataIntoStates();
-        Save(GameManager.Instance.playerStates.gameData, GameManager.Instance.playerStates.gameData.name);
+        //SaveObj(GameManager.Instance.playerStates.gameData, GameManager.Instance.playerStates.gameData.name);
         PlayerPrefs.SetString("sceneName", SceneController.Instance.currentScene);
     }
     public void LoadPlayerData()
     {
-        Load(GameManager.Instance.playerStates.gameData, GameManager.Instance.playerStates.gameData.name);
+        //LoadObj(GameManager.Instance.playerStates.gameData, GameManager.Instance.playerStates.gameData.name);
         isWaitForLoadPlayerdata = false;
     }
 
     public void CreateNewGameData()
     {
         PlayerPrefs.DeleteAll();
+    }
+
+    public static void SaveAudioSetting()
+    {
+        var musicSettingData = JsonUtility.ToJson(AudioManager.Instance.audioData);
+        WriteJsonIntoFile(AudioPath, musicSettingData);
+    }
+
+    public static bool LoadAudioSetting()
+    {
+        var musicSettingData = ReadFileIntoJson(AudioPath);
+        if(musicSettingData == string.Empty)
+        {
+            Debug.LogError("No Music Seting File Found");
+            return false;
+        }
+        AudioManager.Instance.audioData = JsonUtility.FromJson<AudioData_SO>(musicSettingData);
+        return true;
+    }
+    
+    private static bool WriteJsonIntoFile(string fileLoc, string content)
+    {
+        if (content == null) return false;
+
+        //make sure the dir exists
+        System.IO.FileInfo file = new System.IO.FileInfo(fileLoc);
+        file.Directory.Create();
+
+        System.IO.File.WriteAllText(fileLoc, content);
+        return true;
+    }
+    private static string ReadFileIntoJson(string fileLoc)
+    {
+        string content = string.Empty;
+        if (System.IO.File.Exists(fileLoc))
+        {
+            content = System.IO.File.ReadAllText(fileLoc);
+        }
+        return content;
     }
 }
