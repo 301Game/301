@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("StartButtonClicked");
         SceneController.Instance.CreatNewGame();
+        
     }
     public void EndGame()
     {
@@ -18,6 +19,7 @@ public class MainMenu : MonoBehaviour
     public void OnLoadButtonClicked()
     {
         SceneController.Instance.LoadGame();
+        //GameManagerSignals.DoLoadGameLoaded();
     }
 
 }

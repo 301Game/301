@@ -15,6 +15,11 @@ public class SavaManager : Singleton<SavaManager>
     {
         get{ return STORAGER_DIRECTORY + "Audio.json";}
     }
+
+    public static string TipsBookPath
+    {
+        get { return STORAGER_DIRECTORY + "TipsBook.json"; }
+    }
     protected override void Awake()
     {
         base.Awake();
@@ -41,7 +46,26 @@ public class SavaManager : Singleton<SavaManager>
         PlayerPrefs.SetString(key, data);
         PlayerPrefs.Save();
     }
+    public void Save()
+    {
+        // save the tip book
+        var tipsBookData = TipsBook.Instance.Tips;
+        var tBJson = JsonUtility.ToJson(tipsBookData);
+        Debug.Log("tbJson:" + tBJson);
+        WriteJsonIntoFile(TipsBookPath, JsonUtility.ToJson(tipsBookData));
+        //TODO: Save the flowchart data
+        
+    }
 
+    public void Load()
+    {
+        //load the tip book
+        var tipsBookDataJson = ReadFileIntoJson(TipsBookPath);
+        Debug.Log(tipsBookDataJson);
+        TipsBookData_SO tipsBookData;
+        JsonUtility.FromJsonOverwrite(tipsBookDataJson, TipsBook.Instance.saved_tipsBookData);
+        
+    }
     public void LoadObj(Object obj, string key)
     {
         if (PlayerPrefs.HasKey(key) && obj != null)
@@ -66,13 +90,12 @@ public class SavaManager : Singleton<SavaManager>
         PlayerPrefs.DeleteAll();
     }
 
-    public static void SaveAudioSetting()
+    public void SaveAudioSetting()
     {
         var musicSettingData = JsonUtility.ToJson(AudioManager.Instance.audioData);
         WriteJsonIntoFile(AudioPath, musicSettingData);
     }
-
-    public static bool LoadAudioSetting()
+    public bool LoadAudioSetting()
     {
         var musicSettingData = ReadFileIntoJson(AudioPath);
         if(musicSettingData == string.Empty)
@@ -83,8 +106,7 @@ public class SavaManager : Singleton<SavaManager>
         AudioManager.Instance.audioData = JsonUtility.FromJson<AudioData_SO>(musicSettingData);
         return true;
     }
-    
-    private static bool WriteJsonIntoFile(string fileLoc, string content)
+    private bool WriteJsonIntoFile(string fileLoc, string content)
     {
         if (content == null) return false;
 
@@ -93,13 +115,15 @@ public class SavaManager : Singleton<SavaManager>
         file.Directory.Create();
 
         System.IO.File.WriteAllText(fileLoc, content);
+        Debug.Log(fileLoc);
         return true;
     }
-    private static string ReadFileIntoJson(string fileLoc)
+    private string ReadFileIntoJson(string fileLoc)
     {
         string content = string.Empty;
         if (System.IO.File.Exists(fileLoc))
         {
+            Debug.Log("找到存档！");
             content = System.IO.File.ReadAllText(fileLoc);
         }
         return content;

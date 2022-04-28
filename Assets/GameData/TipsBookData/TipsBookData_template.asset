@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1665edcc2498c2e41817c31d4912d7c7, type: 3}
-  m_Name: TipsBookData
+  m_Name: TipsBookData_template
   m_EditorClassIdentifier: 
   items: []

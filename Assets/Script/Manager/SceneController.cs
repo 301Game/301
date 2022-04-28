@@ -29,13 +29,17 @@ public class SceneController : Singleton<SceneController>
     public void CreatNewGame()
     {
         SavaManager.Instance.CreateNewGameData();
+        GameManagerSignals.DoNewGameStart();
         StartCoroutine(TransitionScene("street", Entrance.entranceType.GAME_ENTRANCE));
     }
 
     public void LoadGame()
     {
+        SavaManager.Instance.Load();
+        GameManagerSignals.DoLoadGameLoaded();
         StartCoroutine(TransitionScene(SavaManager.Instance.savedSceneName, Entrance.entranceType.ANY));
         SavaManager.Instance.isWaitForLoadPlayerdata = true;
+
     }
     private IEnumerator TransitionScene(string sceneName, Entrance.entranceType type)
     {

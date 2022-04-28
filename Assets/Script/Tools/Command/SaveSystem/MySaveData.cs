@@ -12,10 +12,10 @@ public class MySaveData : SaveData
     {
         base.Encode(saveDataItems);
 
-        var tipsBookData = FindObjectOfType<TipsBook>().tipsBookData;
+        //var tipsBookData = FindObjectOfType<TipsBook>().cur_tipsBookData;
 
-        var tipsDataItem = SaveDataItem.Create(TipsBookDataKey, JsonUtility.ToJson(tipsBookData));
-        saveDataItems.Add(tipsDataItem);
+        //var tipsDataItem = SaveDataItem.Create(TipsBookDataKey, JsonUtility.ToJson(tipsBookData));
+        //saveDataItems.Add(tipsDataItem);
     }
 
     public override void Decode(List<SaveDataItem> saveDataItems)
@@ -54,7 +54,7 @@ public class MySaveData : SaveData
                     return;
                 }
 
-                TipsBook.Instance.tipsBookData = tipsBookData;
+                //TipsBook.Instance.tipsBookData = tipsBookData;
             }
         }
     }

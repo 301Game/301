@@ -27,4 +27,5 @@ public class TipsBookData_SO : ScriptableObject
         }
         items.Add(newItem);
     }
+
 }

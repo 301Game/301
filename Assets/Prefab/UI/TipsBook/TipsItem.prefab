@@ -214,8 +214,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u67D0\u9053\u5177"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 593591719809f4449a96bc67e59eb3bf, type: 2}
-  m_sharedMaterial: {fileID: -2654387539742807069, guid: 593591719809f4449a96bc67e59eb3bf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e6d1748e11cb3264db8d6fe60261a07b, type: 2}
+  m_sharedMaterial: {fileID: -4151067155316170154, guid: e6d1748e11cb3264db8d6fe60261a07b, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
