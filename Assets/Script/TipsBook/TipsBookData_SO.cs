@@ -18,9 +18,9 @@ public class TipsBookData_SO : ScriptableObject
     /// <param name="newItem">item to add</param>
     public void AddItem(ItemData_SO newItem)
     {
-        foreach(var item in items)
+        foreach (var item in items)
         {
-            if(item == newItem)
+            if (item == newItem)
             {
                 return;
             }

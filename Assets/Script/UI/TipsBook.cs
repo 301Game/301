@@ -63,5 +63,5 @@ public class TipsBook : Singleton<TipsBook>
         isActive = false;
     }
     
-
+    
 }

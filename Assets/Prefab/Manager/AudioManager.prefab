@@ -43,7 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881d694b6902c1b47b031deb24b0fcd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMusicOn: 1
-  musicVolume: 1
-  isAudioOn: 0
-  audioVolume: 0
+  audioData: {fileID: 11400000, guid: 648194e2b1290ba4891e72b9a4ad43b7, type: 2}
