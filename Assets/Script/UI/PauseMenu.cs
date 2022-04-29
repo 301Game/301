@@ -1,6 +1,6 @@
 
 using UnityEngine;
-using Fungus;
+//using Fungus;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -8,10 +8,10 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject PauseMenuUI;
 
-    private Flowchart flowchart;
+  //  private Flowchart flowchart;
     private void Awake()
     {
-        flowchart = GameObject.Find("Flowchart")?.GetComponent<Flowchart>();
+       // flowchart = GameObject.Find("Flowchart")?.GetComponent<Flowchart>();
     }
     void Update()
     {
@@ -54,7 +54,7 @@ public class PauseMenu : MonoBehaviour
     }
     private bool isShowable()
     {
-        if (flowchart.HasExecutingBlocks()) return false;
+       // if (flowchart.HasExecutingBlocks()) return false;
         if (TipsBook.Instance.isActive) return false;
         return true;
     }
