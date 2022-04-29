@@ -1,7 +1,9 @@
 
 using UnityEngine;
 
-
+/// <summary>
+/// The UserSetting Data
+/// </summary>
 [System.Serializable]
 [CreateAssetMenu(fileName = "New data", menuName = "Music Data/New data")]
 public class AudioData_SO : ScriptableObject

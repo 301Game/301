@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Manage the scene transition.
+/// </summary>
 public class SceneController : Singleton<SceneController>
 {
     public GameObject playerPrefab;
     public SceneFader faderPrefab;
 
+    public const string START_SCENE = "Start";
+    public const string FIRST_SCENE = "street";
+
+    private bool isLoading = false;
     public string currentScene
     {
         get
@@ -20,42 +27,72 @@ public class SceneController : Singleton<SceneController>
         base.Awake();
         DontDestroyOnLoad(this);
     }
-    public void TransitionToDestination(string sceneName, Entrance.entranceType type)
+
+    /// <summary>
+    /// Transition to destination.
+    /// </summary>
+    /// <param name="sceneName">The desination scene</param>
+    /// <param name="type">The entrance type in the destination scene</param>
+    public void TransitionToDestination(string sceneName, Entrance.EntranceType type)
     {
         
         StartCoroutine(TransitionScene(sceneName,type));
     }
 
+    /// <summary>
+    /// Start a new Game
+    /// </summary>
     public void CreatNewGame()
     {
         SavaManager.Instance.CreateNewGameData();
         GameManagerSignals.DoNewGameStart();
-        StartCoroutine(TransitionScene("street", Entrance.entranceType.GAME_ENTRANCE));
+        StartCoroutine(TransitionScene(FIRST_SCENE, Entrance.EntranceType.GAME_ENTRANCE));
+        
     }
 
+    /// <summary>
+    /// Load an old game.
+    /// </summary>
     public void LoadGame()
     {
-        SavaManager.Instance.Load();
-        GameManagerSignals.DoLoadGameLoaded();
-        StartCoroutine(TransitionScene(SavaManager.Instance.savedSceneName, Entrance.entranceType.ANY));
-        SavaManager.Instance.isWaitForLoadPlayerdata = true;
-
+        
+        SavaManager.Instance.LoadOldGame();
+        isLoading = true;
+        StartCoroutine(TransitionScene(SavaManager.Instance.loadSceneName, Entrance.EntranceType.ANY));
     }
-    private IEnumerator TransitionScene(string sceneName, Entrance.entranceType type)
+
+    /// <summary>
+    /// Transition to the new scene and locate the player in the certain type door;
+    /// </summary>
+    /// <param name="sceneName">The desination</param>
+    /// <param name="type">the type of entrance in the new scene</param>
+    /// <returns></returns>
+    private IEnumerator TransitionScene(string sceneName, Entrance.EntranceType type)
     {
-        //TODO:��������
-        //TODO:����Fader
         SceneFader fader = Instantiate(faderPrefab);
         yield return StartCoroutine(fader.FadeOut(1.0f));
+        SavaManager.Instance.SaveStatusAndOldScene(); //TODO:save the old scene data;
         yield return SceneManager.LoadSceneAsync(sceneName);
+        SavaManager.Instance.LoadScene(); //TODO:load the new scene data if exists;
         GameObject destinationEntrance = GetDestination(type);
         yield return Instantiate(playerPrefab, destinationEntrance.transform.position, destinationEntrance.transform.rotation);
+
+        if (isLoading) {
+            GameManagerSignals.DoLoadGameLoaded();
+            isLoading = false;
+        }
         yield return StartCoroutine(fader.FadeIn(1.0f));
         yield break;
     }
-    private GameObject GetDestination(Entrance.entranceType destinationType)
+
+    /// <summary>
+    /// Find the target entrance.
+    /// </summary>
+    /// <param name="destinationType"></param>
+    /// <returns></returns>
+    private GameObject GetDestination(Entrance.EntranceType destinationType)
     {
-        if (destinationType == Entrance.entranceType.ANY) return FindObjectOfType<Entrance>().gameObject;
+        if (destinationType == Entrance.EntranceType.ANY) return FindObjectOfType<Entrance>().gameObject;
         Entrance[] targets = FindObjectsOfType<Entrance>();
         for (int i = 0; i < targets.Length; i++)
         {

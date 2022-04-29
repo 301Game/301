@@ -6,7 +6,6 @@ using Fungus;
 public class TipsBook : Singleton<TipsBook>
 {
     public TipsBookData_SO template_tipsBookData;
-    public TipsBookData_SO saved_tipsBookData;
     
     public GameObject mainPanel;
     public GameObject tipBtn;
@@ -18,35 +17,28 @@ public class TipsBook : Singleton<TipsBook>
     public bool isActive;
 
     private TipsBookData_SO tipsBookData;
-    public TipsBookData_SO Tips { get { return tipsBookData; } }
+  
+    public TipsBookData_SO Tips { get { return tipsBookData; } set { tipsBookData = value; } }
     protected override void Awake()
     {
         base.Awake();
         DontDestroyOnLoad(this);
+        
     }
     private void Update()
     {
-        //bool flag = true;
-        //foreach (var chart in FindObjectsOfType<Flowchart>())
-        //{
-        //    if (chart.HasExecutingBlocks())
-        //    {
-        //        flag = false;
-        //        break;
-        //    }
-
-        //}
-        //tipBtn.SetActive(flag);
     }
     private void OnEnable()
     {
-        GameManagerSignals.OnNewGameStart += InitNewData;
-        GameManagerSignals.OnLoadGameLoaded += LoadData;
+        if (template_tipsBookData == null) Debug.Log("template is null");
+        tipsBookData = Instantiate(template_tipsBookData);
+        GameManagerSignals.OnNewGameStart += InitTipsBookUI;
+        GameManagerSignals.OnLoadGameLoaded += InitTipsBookUI;
     }
     private void OnDisable()
     {
-        GameManagerSignals.OnNewGameStart -= InitNewData;
-        GameManagerSignals.OnLoadGameLoaded -= LoadData;
+        GameManagerSignals.OnNewGameStart -= InitTipsBookUI;
+        GameManagerSignals.OnLoadGameLoaded -= InitTipsBookUI;
     }
     public void AddItem(ItemData_SO newItem)
     {
@@ -82,19 +74,7 @@ public class TipsBook : Singleton<TipsBook>
         {
             AddItem(item);
         }
-    }
-
-    private void InitNewData()
-    {
-        tipsBookData = Instantiate(template_tipsBookData);
         tipBtn.SetActive(true);
-        InitTipsBookUI();
-    }
-    private void LoadData()
-    {
-        tipsBookData = Instantiate(saved_tipsBookData);
-        tipBtn.SetActive(true);
-        InitTipsBookUI();
     }
 
 }

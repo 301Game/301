@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Entrance : MonoBehaviour
 {
-    public enum entranceType{
+    public enum EntranceType{
         LEFT,
         MIDDLE,
         RIGHT,
@@ -12,7 +12,7 @@ public class Entrance : MonoBehaviour
         ANY,
     }
     public string fromScene;
-    public entranceType type;
+    public EntranceType type;
     // Start is called before the first frame update
     void Start()
     {

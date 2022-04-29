@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// The Options Menu Script. 
+/// </summary>
 public class AudioMenu : MonoBehaviour
 {
     [SerializeField]private Toggle musicToggle;
@@ -33,19 +36,16 @@ public class AudioMenu : MonoBehaviour
 
     public void MusicSliderValueChanged()
     {
-        //AudioManager.Instance.musicVolume = musicSlider.value;
         AudioManager.Instance.SetMusicVolume(musicSlider.value);
     }
 
     public void AudioToggleValueChanged()
     {
-        //AudioManager.Instance.isAudioOn = audioToggle.isOn;
         AudioManager.Instance.SetAudioOn(audioToggle.isOn);
     }
 
     public void AudioSliderValueChanged()
     {
-        //AudioManager.Instance.audioVolume = audioSlider.value;
         AudioManager.Instance.SetAudioVolume(audioSlider.value);
     }
 }
