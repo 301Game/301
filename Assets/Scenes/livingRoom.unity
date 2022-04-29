@@ -846,10 +846,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 916987527}
-  selectedCommands:
-  - {fileID: 916987522}
+  selectedBlocks: []
+  selectedCommands: []
   variables:
   - {fileID: 916987512}
   - {fileID: 916987528}
@@ -908,7 +906,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -190.84224
     y: 42.521732
-    width: 134.98167
+    width: 130.87912
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1466,7 +1464,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -327.09064
     y: 39.67311
-    width: 80.769226
+    width: 79.89011
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1604,7 +1602,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -160.60481
     y: 87.60487
-    width: 65.38461
+    width: 65.82417
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1810,7 +1808,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -176.25426
     y: 140.94232
-    width: 98.35164
+    width: 96.5934
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3102,6 +3100,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.0372396
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.943843
+      objectReference: {fileID: 0}
     - target: {fileID: 1237409664933998076, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_BoundingShape2D
       value: 
