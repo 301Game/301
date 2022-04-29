@@ -62,7 +62,6 @@ public class SavaManager : Singleton<SavaManager>
         //load the tip book
         var tipsBookDataJson = ReadFileIntoJson(TipsBookPath);
         Debug.Log(tipsBookDataJson);
-        TipsBookData_SO tipsBookData;
         JsonUtility.FromJsonOverwrite(tipsBookDataJson, TipsBook.Instance.saved_tipsBookData);
         
     }

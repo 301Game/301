@@ -58,5 +58,9 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+#Example scene
 /Assets/Packs/FungusExamples/
+
+#Version information
+/ProjectSettings/ProjectVersion.txt
 
