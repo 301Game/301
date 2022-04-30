@@ -5,8 +5,6 @@ using Fungus;
 
 public class TipsBook : Singleton<TipsBook>
 {
-    public TipsBookData_SO template_tipsBookData;
-    
     public GameObject mainPanel;
     public GameObject tipBtn;
     public GameObject ItemList;
@@ -16,9 +14,9 @@ public class TipsBook : Singleton<TipsBook>
 
     public bool isActive;
 
-    private TipsBookData_SO tipsBookData;
+    private TipsBookData tipsBookData = new TipsBookData();
   
-    public TipsBookData_SO Tips { get { return tipsBookData; } set { tipsBookData = value; } }
+    public TipsBookData Tips { get { return tipsBookData; } set { tipsBookData = value; } }
     protected override void Awake()
     {
         base.Awake();
@@ -30,8 +28,6 @@ public class TipsBook : Singleton<TipsBook>
     }
     private void OnEnable()
     {
-        if (template_tipsBookData == null) Debug.Log("template is null");
-        tipsBookData = Instantiate(template_tipsBookData);
         GameManagerSignals.OnNewGameStart += InitTipsBookUI;
         GameManagerSignals.OnLoadGameLoaded += InitTipsBookUI;
     }
