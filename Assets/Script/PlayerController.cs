@@ -4,12 +4,12 @@ using UnityEngine;
 //控制角色
 public class PlayerController : Singleton<PlayerController>
 {
-    public static PlayerController instance;//����
+    public static PlayerController instance;
 
     public string lastSceneName;
-    float speed = 0.05f;//�ƶ��ٶ�
-    bool is_move = false;// �����ƶ�״̬
-    int direction = 0; //-1��ʾ���� 1��ʾ����
+    float speed = 0.05f;
+    bool is_move = false;
+    int direction = 0;
     float horizontal;
  
     public string theSceneName;
@@ -18,9 +18,21 @@ public class PlayerController : Singleton<PlayerController>
 
     private Rigidbody2D rigidbody2d;
     private Animator animator;
-   // private Flowchart flowchart;
     
-    [SerializeField]private PlayerStates playerStates;
+    [SerializeField]public PlayerStates playerStates;
+    public PlayerStates playerData
+    {
+        get
+        {
+            updateDataIntoStates();
+            return playerStates;
+        }
+        set
+        {
+            playerStates = value;
+            loadPlayerData();
+        }
+    }
     
     protected override void Awake()
     {
@@ -34,14 +46,18 @@ public class PlayerController : Singleton<PlayerController>
     void OnEnable()
     {
         GameManager.Instance.RegisterPlayer(playerStates);
-        if (SavaManager.Instance.isWaitForLoadPlayerdata)
-        {
-            SavaManager.Instance.LoadPlayerData();
-            loadPlayerData();
-        }
+
+        GameManagerSignals.OnSaveGame += updateDataIntoStates;
+        GameManagerSignals.OnLoadGameLoaded += loadPlayerData;
     }
     void Start()
     {
+    }
+
+    private void OnDisable()
+    {
+        GameManagerSignals.OnSaveGame -= updateDataIntoStates;
+        GameManagerSignals.OnLoadGameLoaded -= loadPlayerData;
     }
 
     void Update()
@@ -81,9 +97,11 @@ public class PlayerController : Singleton<PlayerController>
     }
     public void updateDataIntoStates()
     {
-        playerStates.position[0] = transform.position.x;
-        playerStates.position[1] = transform.position.y;
-        playerStates.position[2] = transform.position.z;
+        float[] position = new float[3];
+        position[0] = transform.position.x;
+        position[1] = transform.position.y;
+        position[2] = transform.position.z;
+        playerStates.position = position;
         playerStates.lookAtRight = direction > 0 ? true: false;
     }
     public void loadPlayerData()

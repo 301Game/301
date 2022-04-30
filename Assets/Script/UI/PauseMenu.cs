@@ -11,7 +11,11 @@ public class PauseMenu : MonoBehaviour
   //  private Flowchart flowchart;
     private void Awake()
     {
+<<<<<<< HEAD
        // flowchart = GameObject.Find("Flowchart")?.GetComponent<Flowchart>();
+=======
+        flowchart = FindObjectOfType<Flowchart>();
+>>>>>>> 31250ed53f52372a7c75f07793310e1f6e474f8c
     }
     void Update()
     {
@@ -45,12 +49,12 @@ public class PauseMenu : MonoBehaviour
     }
     public void OnSaveButtonClicked()
     {
-        SavaManager.Instance.Save();
+        SavaManager.Instance.WriteSaveData();
     }
 
     public void OnLoadButtonClicked()
     {
-        SavaManager.Instance.LoadPlayerData();
+        
     }
     private bool isShowable()
     {
