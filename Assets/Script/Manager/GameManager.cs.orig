@@ -1,0 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+//using Cinemachine;
+
+
+public class GameManager : Singleton<GameManager>
+{
+    public PlayerStates playerStates;
+<<<<<<< HEAD
+    
+=======
+   // private CinemachineVirtualCamera virtualCamera;
+>>>>>>> 3d9e5f7f10cf33cd9ac529db72ddb42bddb2c38e
+
+    public bool isMusicOn = true;
+    public float musicVolume = 1f;
+
+    public bool isAudioOn;
+    public float audioVolume;
+
+    private CinemachineVirtualCamera virtualCamera;
+    protected override void Awake()
+    {
+        base.Awake();
+        DontDestroyOnLoad(this);
+    }
+
+    public void RegisterPlayer(PlayerStates player)
+    {
+        playerStates = player;
+
+       // virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
+     //   if(virtualCamera != null)
+        {
+            //�趨�������
+          //  virtualCamera.Follow = playerStates.transform; 
+        }
+    }
+}
