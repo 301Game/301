@@ -12,7 +12,7 @@ public class SceneController : Singleton<SceneController>
     public SceneFader faderPrefab;
 
     public const string START_SCENE = "Start";
-    public const string FIRST_SCENE = "street";
+    public const string FIRST_SCENE = "clinic";
 
     private bool isLoading = false;
     public string currentScene
@@ -75,7 +75,10 @@ public class SceneController : Singleton<SceneController>
         yield return SceneManager.LoadSceneAsync(sceneName);
         SavaManager.Instance.LoadScene(); //TODO:load the new scene data if exists;
         GameObject destinationEntrance = GetDestination(type);
-        yield return Instantiate(playerPrefab, destinationEntrance.transform.position, destinationEntrance.transform.rotation);
+
+        var players = FindObjectOfType<PlayerController>();
+        if (players != null) players.transform.position = destinationEntrance.transform.position;
+        else yield return Instantiate(playerPrefab, destinationEntrance.transform.position, destinationEntrance.transform.rotation);
 
         if (isLoading) {
             GameManagerSignals.DoLoadGameLoaded();
