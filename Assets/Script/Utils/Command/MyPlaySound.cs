@@ -13,6 +13,8 @@ public class MyPlaySound : Command
     [Tooltip("Wait until the sound has finished playing before continuing execution.")]
     [SerializeField] protected bool waitUntilFinished;
 
+    [Tooltip("play loop")]
+    [SerializeField] protected bool isLoop;
     protected virtual void DoWait()
     {
         Continue();
@@ -32,7 +34,8 @@ public class MyPlaySound : Command
         var volume = AudioManager.Instance.audioVolume;
         if (AudioManager.Instance.isAudioOn)
         {
-            musicManager.PlaySound(soundClip, volume);
+            musicManager.PlayAmbianceSound(soundClip, isLoop, volume);
+            
         }
 
         if (waitUntilFinished)

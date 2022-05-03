@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using Fungus;
 
 public class Door : ItemController
 {
     public string trasitionSceneName;
     public Entrance.EntranceType destinationType;
 
-    private void Awake()
+    [Tooltip("Whether Auto transition to the desination or not")]
+    [SerializeField]protected bool autoTransition = true;
+
+    protected virtual void Awake()
     {
-        interKeyEvents.AddListener(Transition);
+        if(autoTransition)interKeyEvents.AddListener(Transition);
     }
-    private void Transition()
+    public void Transition()
     {
         SceneController.Instance.TransitionToDestination(trasitionSceneName, destinationType);
         Debug.Log("destination:" + destinationType);
