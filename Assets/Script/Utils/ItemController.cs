@@ -13,6 +13,10 @@ public class ItemController : MonoBehaviour
     private GameObject tipIcon;
     public ItemData_SO itemData;
 
+    [FormerlySerializedAs("OnEnterKeyDown")]
+    [SerializeField]
+    protected UnityEvent enterEvents = new UnityEvent();
+
     [FormerlySerializedAs("onInterKeyDown")]
     [SerializeField]
     protected UnityEvent interKeyEvents = new UnityEvent();
@@ -28,10 +32,13 @@ public class ItemController : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-
-            tipIcon = Instantiate(tipIconPrefab, new Vector2(transform.position.x, 0.5f), Quaternion.identity, transform);
+            if(tipIconPrefab != null) 
+                tipIcon = Instantiate(tipIconPrefab, new Vector2(transform.position.x, 0.5f), Quaternion.identity, transform);
+        
             hasPlayer = true;
+            if (enterEvents != null) enterEvents.Invoke();
         }
+        
     }
 
     protected void Update()

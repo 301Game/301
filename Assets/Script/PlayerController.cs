@@ -139,6 +139,7 @@ public class PlayerController : Singleton<PlayerController>
     private void SetUnmovable(Fungus.Block block)
     {
         isMovable = false;
+        StopAnimation();
     }
     private void SetMoable(Fungus.Block block)
     {
@@ -149,6 +150,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         if (SetUnMovable.Contains(menu.GetType())){
             isMovable = false;
+            StopAnimation();
         }
     }
 

@@ -11,19 +11,5 @@ public class Entrance : MonoBehaviour
         GAME_ENTRANCE,
         ANY,
     }
-    public string fromScene;
     public EntranceType type;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //if(PlayerController.instance.lastSceneName == fromScene)
-        //{
-        //    CameraController.instance.transform.position = new Vector3(this.transform.position.x,
-        //        CameraController.instance.transform.position.y,
-        //        CameraController.instance.transform.position.z);
-        //    PlayerController.instance.transform.position = new Vector3(this.transform.position.x,
-        //        PlayerController.instance.transform.position.y,
-        //        PlayerController.instance.transform.position.z);
-        //}
-    }
 }
