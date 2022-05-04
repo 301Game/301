@@ -46,12 +46,19 @@ public class TipsBook : Singleton<TipsBook>
         if (item == null) return;
         ItemInfText.text = item.ItemDesc;
         ItemInfImg.enabled = true;
-        ItemInfImg.sprite = item.ItemImg;
-        ItemInfImg.SetNativeSize();
+
+        if (item.ItemImg == null) ItemInfImg.enabled = false;
+        else
+        {
+            ItemInfImg.sprite = item.ItemImg;
+            ItemInfImg.SetNativeSize();
+        }
+        
     }
 
     public void Resume()
     {
+        MenuSignals.DoMenuShow(this);
         mainPanel.SetActive(true);
         tipBtn.SetActive(false);
         isActive = true;
@@ -59,6 +66,7 @@ public class TipsBook : Singleton<TipsBook>
 
     public void Hide()
     {
+        MenuSignals.DoMenuEnd(this);
         mainPanel.SetActive(false);
         tipBtn.SetActive(true);
         isActive = false;

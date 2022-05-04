@@ -2,7 +2,7 @@ using UnityEngine;
 using Fungus;
 
 [CommandInfo("Other",
-             "MyPlayMusic",
+             "My Play Music",
              "使用AudioManager中设置的音量播放音乐")]
 [AddComponentMenu("")]
 public class MyPlayMusic : Command

@@ -3,7 +3,7 @@ using Fungus;
 using UnityEngine.Playables;
 
 [CommandInfo("Other",
-             "PlayTimeLine",
+             "Play TimeLine",
              "²¥·ÅTimeLine")]
 [AddComponentMenu("")]
 public class PlayTimeLine : Command
@@ -26,7 +26,7 @@ public class PlayTimeLine : Command
             return;
         }
         playableDirector.Play();
-        Invoke("Continue", (float)playableDirector.duration);
+        Invoke("DoWait", (float)playableDirector.duration);
         
     }
 

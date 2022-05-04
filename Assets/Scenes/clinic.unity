@@ -1759,6 +1759,7 @@ MonoBehaviour:
   indentLevel: 0
   soundClip: {fileID: 8300000, guid: c06821b75fb7694478c1da550607e858, type: 3}
   waitUntilFinished: 0
+  isLoop: 0
 --- !u!114 &1070254762
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2418,11 +2419,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2021494
+      value: 3.2148867
       objectReference: {fileID: 0}
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.926554
+      value: -6.92652
       objectReference: {fileID: 0}
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2859,6 +2860,10 @@ PrefabInstance:
     - target: {fileID: 1407300195586601085, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
       propertyPath: m_Offset.y
       value: 1.0825495
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505588560723753376, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
+      propertyPath: autoTransition
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5505588560723753376, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
       propertyPath: trasitionSceneName
