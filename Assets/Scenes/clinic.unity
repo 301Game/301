@@ -1064,8 +1064,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u9192\u4E00\u9192\uFF0C\u9192\u4E00\u9192"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e6d1748e11cb3264db8d6fe60261a07b, type: 2}
-  m_sharedMaterial: {fileID: -4151067155316170154, guid: e6d1748e11cb3264db8d6fe60261a07b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28442d674f8f6f346acb7dfe9c21c635, type: 2}
+  m_sharedMaterial: {fileID: -4151067155316170154, guid: 28442d674f8f6f346acb7dfe9c21c635, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2419,11 +2419,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2148867
+      value: 3.1998796
       objectReference: {fileID: 0}
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.92652
+      value: -6.9265604
       objectReference: {fileID: 0}
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2533,7 +2533,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0abf946023f236a4b810603ca620120c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromScene: 
   type: 3
 --- !u!4 &1585056698
 Transform:
@@ -2905,7 +2904,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0abf946023f236a4b810603ca620120c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromScene: 
   type: 2
 --- !u!1 &2058145194
 GameObject:

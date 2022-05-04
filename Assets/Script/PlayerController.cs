@@ -15,9 +15,6 @@ public class PlayerController : Singleton<PlayerController>
     private int direction = 0;
     private float horizontal;
     private bool isMovable;
- 
-    public string theSceneName;
-    public int theSceneIndex;
 
 
     private Rigidbody2D rigidbody2d;

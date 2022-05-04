@@ -38,6 +38,7 @@ public class DialogBox : Singleton<DialogBox>
             (float updateAlpha) =>
             {
                 dialogBoxCanvasGroup.alpha = updateAlpha;
+                Debug.Log(dialogText.text);
             });
 
         Invoke("SayDialogFadeOut", waitTime);
@@ -47,6 +48,7 @@ public class DialogBox : Singleton<DialogBox>
     /// </summary>
     private void SayDialogFadeOut()
     {
+        Debug.Log("¿ªÊ¼µ­³ö");
         LeanTween.value(1, 0, m_fadeDuration).setOnUpdate(
            (float updateAlpha) =>
            {

@@ -17,10 +17,14 @@ public class AboveSay : Command
     [Tooltip("”Ôæ‰œ‘ æ ±º‰")]
     [SerializeField] protected float showTime;
 
+    protected virtual void DoWait()
+    {
+        Continue();
+    }
     public override void OnEnter()
     {
         DialogBox.Instance.Say(content, fadeDuration, showTime);
-        Invoke("Continue", showTime);
+        Invoke("DoWait", showTime + fadeDuration);
     }
     public override string GetSummary()
     {
