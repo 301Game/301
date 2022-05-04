@@ -1,6 +1,6 @@
 
 using UnityEngine;
-//using Fungus;
+using Fungus;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -8,14 +8,11 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject PauseMenuUI;
 
-  //  private Flowchart flowchart;
+   private Flowchart flowchart;
     private void Awake()
     {
-<<<<<<< HEAD
        // flowchart = GameObject.Find("Flowchart")?.GetComponent<Flowchart>();
-=======
         flowchart = FindObjectOfType<Flowchart>();
->>>>>>> 31250ed53f52372a7c75f07793310e1f6e474f8c
     }
     void Update()
     {
