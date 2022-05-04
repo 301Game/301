@@ -460,7 +460,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.8719091
+      value: 3.8768606
       objectReference: {fileID: 0}
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -714,9 +714,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 68.06383
+    x: 69.06383
     y: 70
-    width: 82.8
+    width: 82
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1235,17 +1235,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 675768348139928231, guid: 4301d232d2130434abd8d4e673796e61, type: 3}
   m_PrefabInstance: {fileID: 675768347117318819}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1295271941 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 675768348139928230, guid: 4301d232d2130434abd8d4e673796e61, type: 3}
-  m_PrefabInstance: {fileID: 675768347117318819}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1295271940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75fbd3b4a39cbbc4fb78764fdec29578, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1728431638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1378,8 +1367,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tipIconPrefab: {fileID: 2912493771837861791, guid: a272bdefcf3afca4d8a2db1c8a9b5848, type: 3}
-  CGManager: {fileID: 1295271941}
-  hasPlayer: 0
   itemData: {fileID: 0}
   interKeyEvents:
     m_PersistentCalls:
