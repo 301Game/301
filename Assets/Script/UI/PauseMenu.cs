@@ -48,6 +48,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        Debug.Log("PauseMenu 发出广播End");
         MenuSignals.DoMenuEnd(this);
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -56,6 +57,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
+        Debug.Log("PauseMenu 发出广播Show");
         MenuSignals.DoMenuShow(this);
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;

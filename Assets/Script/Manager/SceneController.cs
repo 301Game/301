@@ -12,7 +12,7 @@ public class SceneController : Singleton<SceneController>
     public SceneFader faderPrefab;
 
     public const string START_SCENE = "Start";
-    public const string FIRST_SCENE = "clinic";
+    public const string FIRST_SCENE = "observationRoom";
 
     private bool isLoading = false;
     public string currentScene

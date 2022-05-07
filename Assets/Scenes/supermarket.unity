@@ -218,6 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipIconPrefab: {fileID: 2912493771837861791, guid: a272bdefcf3afca4d8a2db1c8a9b5848, type: 3}
   itemData: {fileID: 11400000, guid: 1a54ad14c848c6f43b38e62b3dbbeae0, type: 2}
+  enterEvents:
+    m_PersistentCalls:
+      m_Calls: []
   interKeyEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -557,7 +560,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0abf946023f236a4b810603ca620120c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fromScene: 
   type: 0
 --- !u!1 &541790784
 GameObject:
@@ -4229,7 +4231,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.040003
+      value: 3.0400033
       objectReference: {fileID: 0}
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4335,6 +4337,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipIconPrefab: {fileID: 2912493771837861791, guid: a272bdefcf3afca4d8a2db1c8a9b5848, type: 3}
   itemData: {fileID: 0}
+  enterEvents:
+    m_PersistentCalls:
+      m_Calls: []
   interKeyEvents:
     m_PersistentCalls:
       m_Calls:
@@ -4676,6 +4681,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipIconPrefab: {fileID: 2912493771837861791, guid: a272bdefcf3afca4d8a2db1c8a9b5848, type: 3}
   itemData: {fileID: 0}
+  enterEvents:
+    m_PersistentCalls:
+      m_Calls: []
   interKeyEvents:
     m_PersistentCalls:
       m_Calls:
@@ -4774,12 +4782,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ed85b005e2f04ab49b8d0af34e1c6be1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 33901285cfe785b4f82d3d1dade87913, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 28.131868, y: 10.065934}
+  m_Size: {x: 27.342405, y: 10.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4851,6 +4859,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipIconPrefab: {fileID: 2912493771837861791, guid: a272bdefcf3afca4d8a2db1c8a9b5848, type: 3}
   itemData: {fileID: 0}
+  enterEvents:
+    m_PersistentCalls:
+      m_Calls: []
   interKeyEvents:
     m_PersistentCalls:
       m_Calls:

@@ -58,6 +58,7 @@ public class TipsBook : Singleton<TipsBook>
 
     public void Resume()
     {
+        Debug.Log("TipsBook 发出广播");
         MenuSignals.DoMenuShow(this);
         mainPanel.SetActive(true);
         tipBtn.SetActive(false);
@@ -66,6 +67,7 @@ public class TipsBook : Singleton<TipsBook>
 
     public void Hide()
     {
+        Debug.Log("TipsBook 发出广播");
         MenuSignals.DoMenuEnd(this);
         mainPanel.SetActive(false);
         tipBtn.SetActive(true);

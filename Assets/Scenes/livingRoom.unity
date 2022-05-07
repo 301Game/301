@@ -1004,10 +1004,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 916987556}
-  selectedCommands:
-  - {fileID: 916987561}
+  selectedBlocks: []
+  selectedCommands: []
   variables:
   - {fileID: 916987512}
   - {fileID: 916987528}
@@ -5550,7 +5548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.943853
+      value: -4.9438396
       objectReference: {fileID: 0}
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6033,6 +6031,10 @@ PrefabInstance:
       propertyPath: interKeyEvents.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7020775787356298860, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
 --- !u!1001 &6334898423046693910
@@ -6129,6 +6131,10 @@ PrefabInstance:
     - target: {fileID: 5505588560723753376, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
       propertyPath: trasitionSceneName
       value: motherRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020775787356298860, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
+      propertyPath: type
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}

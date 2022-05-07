@@ -14,7 +14,7 @@ public class PlayerController : Singleton<PlayerController>
     private bool is_move = false;
     private int direction = 0;
     private float horizontal;
-    private bool isMovable;
+    private bool isMovable = true;
 
 
     private Rigidbody2D rigidbody2d;
