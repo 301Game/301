@@ -121,22 +121,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1575539524}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 4310882364138429798}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 592081943}
+        m_TargetAssemblyTypeName: TipsBook, Assembly-CSharp
+        m_MethodName: Hide
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -345,22 +333,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4310882364138429798}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1575539524}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 592081943}
+        m_TargetAssemblyTypeName: TipsBook, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -605,7 +581,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3487590832259201874}
   m_Direction: 0
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.9999999
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1181,7 +1157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347f68679e49a90498b00adddb1ea7c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipsBookData: {fileID: 11400000, guid: 2d84e8cb3e9780d4eaa51687663873aa, type: 2}
+  template_tipsBookData: {fileID: 11400000, guid: 80c542509ee94124a9dcc43c75a46a5a, type: 2}
+  saved_tipsBookData: {fileID: 0}
   mainPanel: {fileID: 4310882364138429798}
   tipBtn: {fileID: 1575539524}
   ItemList: {fileID: 4536821710480665742}
@@ -1224,7 +1201,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0.08999443}
+  m_AnchoredPosition: {x: 0.00012207031, y: 3.4952068}
   m_SizeDelta: {x: 0, y: 660}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &418124326330773663
@@ -1486,7 +1463,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1049879009215143175}
   m_HandleRect: {fileID: 2425361973530227081}
   m_Direction: 2
-  m_Value: 0.9947043
+  m_Value: 0.7943977
   m_Size: 0.97424245
   m_NumberOfSteps: 0
   m_OnValueChanged:

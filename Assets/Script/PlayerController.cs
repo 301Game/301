@@ -1,26 +1,39 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using System.Collections.Generic;
 //using Fungus;
 //控制角色
 public class PlayerController : Singleton<PlayerController>
 {
-    public static PlayerController instance;//����
 
-    public string lastSceneName;
-    float speed = 0.05f;//�ƶ��ٶ�
-    bool is_move = false;// �����ƶ�״̬
-    int direction = 0; //-1��ʾ���� 1��ʾ����
-    float horizontal;
- 
-    public string theSceneName;
-    public int theSceneIndex;
+    private static List<System.Type> SetUnMovable = new List<System.Type>(new System.Type[]{
+        typeof(PauseMenu),
+        typeof(TipsBook),
+    });
+    private float speed = 0.05f;
+    private bool is_move = false;
+    private int direction = 0;
+    private float horizontal;
+    private bool isMovable = true;
 
 
     private Rigidbody2D rigidbody2d;
     private Animator animator;
-   // private Flowchart flowchart;
     
-    [SerializeField]private PlayerStates playerStates;
+    [SerializeField]public PlayerStates playerStates;
+    public PlayerStates playerData
+    {
+        get
+        {
+            updateDataIntoStates();
+            return playerStates;
+        }
+        set
+        {
+            playerStates = value;
+            loadPlayerData();
+        }
+    }
     
     protected override void Awake()
     {
@@ -34,18 +47,31 @@ public class PlayerController : Singleton<PlayerController>
     void OnEnable()
     {
         GameManager.Instance.RegisterPlayer(playerStates);
-        if (SavaManager.Instance.isWaitForLoadPlayerdata)
-        {
-            SavaManager.Instance.LoadPlayerData();
-            loadPlayerData();
-        }
+
+        GameManagerSignals.OnSaveGame += updateDataIntoStates;
+        GameManagerSignals.OnLoadGameLoaded += loadPlayerData;
+        Fungus.BlockSignals.OnBlockStart += SetUnmovable;
+        Fungus.BlockSignals.OnBlockEnd += SetMoable;
+        MenuSignals.OnMenuShow += SetUnmovable;
+        MenuSignals.OnMenuEnd += SetMovable;
     }
     void Start()
     {
     }
 
+    private void OnDisable()
+    {
+        GameManagerSignals.OnSaveGame -= updateDataIntoStates;
+        GameManagerSignals.OnLoadGameLoaded -= loadPlayerData;
+        Fungus.BlockSignals.OnBlockStart -= SetUnmovable;
+        Fungus.BlockSignals.OnBlockEnd -= SetMoable;
+        MenuSignals.OnMenuShow -= SetUnmovable;
+        MenuSignals.OnMenuEnd -= SetMovable;
+    }
+
     void Update()
     {
+        if (!isMovable) return;
         horizontal = Input.GetAxis("Horizontal");
 
         if (Mathf.Abs(horizontal) < 0.0000001f)
@@ -74,6 +100,7 @@ public class PlayerController : Singleton<PlayerController>
 
     void FixedUpdate()
     {
+        if (!isMovable) return;
         Vector2 position = rigidbody2d.position;
         if (!is_move) return;
         position.x = position.x + speed * direction;
@@ -81,9 +108,11 @@ public class PlayerController : Singleton<PlayerController>
     }
     public void updateDataIntoStates()
     {
-        playerStates.position[0] = transform.position.x;
-        playerStates.position[1] = transform.position.y;
-        playerStates.position[2] = transform.position.z;
+        float[] position = new float[3];
+        position[0] = transform.position.x;
+        position[1] = transform.position.y;
+        position[2] = transform.position.z;
+        playerStates.position = position;
         playerStates.lookAtRight = direction > 0 ? true: false;
     }
     public void loadPlayerData()
@@ -96,16 +125,34 @@ public class PlayerController : Singleton<PlayerController>
     {
         animator.SetFloat("speed", 0f);
     }
-    private void OnGUI()
-    {
-
-    }
-    private bool isMovable()
-    {
-      //  if (flowchart.HasExecutingBlocks()) return false;
-        if (PauseMenu.gameIsPaused) return false;
-        if(TipsBook.IsInitialized && TipsBook.Instance.isActive) return false;
+    //private bool isMovable()
+    //{
+    //  //  if (flowchart.HasExecutingBlocks()) return false;
+    //    if (PauseMenu.gameIsPaused) return false;
+    //    if(TipsBook.IsInitialized && TipsBook.Instance.isActive) return false;
         
-        return true;
+    //    return true;
+    //}
+    private void SetUnmovable(Fungus.Block block)
+    {
+        isMovable = false;
+        StopAnimation();
+    }
+    private void SetMoable(Fungus.Block block)
+    {
+        isMovable = true;
+    }
+
+    private void SetUnmovable(MonoBehaviour menu)
+    {
+        if (SetUnMovable.Contains(menu.GetType())){
+            isMovable = false;
+            StopAnimation();
+        }
+    }
+
+    private void SetMovable(MonoBehaviour menu)
+    {
+        isMovable = true;
     }
 }

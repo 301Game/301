@@ -4,7 +4,6 @@ using TMPro;
 using Fungus;
 
 /// <summary>
-/// 管理人物头顶对话
 /// Manage the dialog box above the character
 /// </summary>
 /// 
@@ -24,6 +23,12 @@ public class DialogBox : Singleton<DialogBox>
         dialogText.text = "";
     }
 
+    /// <summary>
+    /// say.
+    /// </summary>
+    /// <param name="content">Speak content </param>
+    /// <param name="fadeDuration">The content fade in and fade out time</param>
+    /// <param name="waitTime">The time of the content's show time</param>
     public void Say(string content, float fadeDuration, float waitTime)
     {
         dialogText.SetText(content);
@@ -33,12 +38,17 @@ public class DialogBox : Singleton<DialogBox>
             (float updateAlpha) =>
             {
                 dialogBoxCanvasGroup.alpha = updateAlpha;
+                Debug.Log(dialogText.text);
             });
 
         Invoke("SayDialogFadeOut", waitTime);
     }
+    /// <summary>
+    /// fade out the sayDialog.
+    /// </summary>
     private void SayDialogFadeOut()
     {
+        Debug.Log("开始淡出");
         LeanTween.value(1, 0, m_fadeDuration).setOnUpdate(
            (float updateAlpha) =>
            {

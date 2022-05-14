@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class PlayerStates : MonoBehaviour
 {
-    public GameData gameData;
+    public PlayerData_SO gameData;
 
     #region Data From GameData
     public float[] position
     {
         get { if (gameData != null) return gameData.position; else return null; }
 
-        set { gameData.position = value; }
+        set { 
+            gameData.position[0] = value[0];
+            gameData.position[1] = value[1];
+            gameData.position[2] = value[2];
+            }
     }
     public bool lookAtRight
     {

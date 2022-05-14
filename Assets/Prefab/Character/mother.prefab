@@ -192,10 +192,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u7EC8\u4E8E\u6B63\u5E38\u4E86\uFF0C\u6CEA\u76EE\u5B50"
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e6d1748e11cb3264db8d6fe60261a07b, type: 2}
-  m_sharedMaterial: {fileID: -4151067155316170154, guid: e6d1748e11cb3264db8d6fe60261a07b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 28442d674f8f6f346acb7dfe9c21c635, type: 2}
+  m_sharedMaterial: {fileID: -4151067155316170154, guid: 28442d674f8f6f346acb7dfe9c21c635, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -279,7 +279,7 @@ GameObject:
   m_Layer: 8
   m_Name: mother
   m_TagString: Player
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -440,7 +440,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0f0f8765f500c7489891930231a41ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastSceneName: 
   theSceneName: 
   theSceneIndex: 0
-  playerStates: {fileID: 0}
+  playerStates: {fileID: 2991449625926611321}

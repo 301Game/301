@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 
 
+
 public class GameManager : Singleton<GameManager>
 {
     public PlayerStates playerStates;
@@ -26,10 +27,10 @@ public class GameManager : Singleton<GameManager>
     {
         playerStates = player;
 
-        virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
-        if(virtualCamera != null)
+       virtualCamera = FindObjectOfType<CinemachineVirtualCamera>();
+       if(virtualCamera != null)
         {
-            virtualCamera.Follow = playerStates.transform; 
+          virtualCamera.Follow = playerStates.transform; 
         }
     }
 }

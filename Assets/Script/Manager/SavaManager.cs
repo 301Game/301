@@ -1,111 +1,90 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Fungus;
+using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Manage the date on the process of the game, and write into file when user want.
+/// </summary>
 public class SavaManager : Singleton<SavaManager>
 {
     public bool isWaitForLoadPlayerdata;
-    
+    public SavePointData gameData = new SavePointData();
+    public string loadSceneName;
 
+    /// <summary>
+    /// The static storage path;
+    /// </summary>
     public static string STORAGER_DIRECTORY
     {
-        get { return Application.persistentDataPath + "/301/"; }
+        get { return Application.persistentDataPath; }
     }
     public static string AudioPath
     {
         get{ return STORAGER_DIRECTORY + "Audio.json";}
     }
 
-    public static string TipsBookPath
+    public string GetSavedPath()
     {
-        get { return STORAGER_DIRECTORY + "TipsBook.json"; }
+        return STORAGER_DIRECTORY + "/history.json";
     }
     protected override void Awake()
     {
         base.Awake();
         DontDestroyOnLoad(this);
     }
-    public string savedSceneName
+    
+    /// <summary>
+    /// When transition among different scenes, save the old scene information and update some basic data
+    /// like the name of the active scene.
+    /// </summary>
+    public void SaveStatusAndOldScene()
     {
-        get
-        {
-            if (PlayerPrefs.HasKey("sceneName"))
-            {
-                return PlayerPrefs.GetString("sceneName");
-            }
-            else
-            {
-                //FIXME: ����û�д浵�������쳣����(���翪ʼ����Ϸ�����絯��)
-                return "livingRoom";
-            }
-        }
+        GameManagerSignals.DoSaveGame();
+        gameData.Encode();
     }
-    public void SaveObj(Object obj, string key)
+
+    /// <summary>
+    /// Save immediately and write into files.
+    /// </summary>
+    public void WriteSaveData()
     {
-        var data = JsonUtility.ToJson(obj);
-        PlayerPrefs.SetString(key, data);
-        PlayerPrefs.Save();
+        SaveStatusAndOldScene();
+        WriteJsonIntoFile(GetSavedPath(), JsonUtility.ToJson(gameData));
     }
-    public void Save()
+
+    /// <summary>
+    /// Load old Game.
+    /// </summary>
+    public void LoadOldGame()
     {
-        // save the tip book
-        var tipsBookData = TipsBook.Instance.Tips;
-        var tBJson = JsonUtility.ToJson(tipsBookData);
-        Debug.Log("tbJson:" + tBJson);
-        WriteJsonIntoFile(TipsBookPath, JsonUtility.ToJson(tipsBookData));
-        //TODO: Save the flowchart data
+        string dataJson = ReadFileIntoJson(GetSavedPath());
+        JsonUtility.FromJsonOverwrite(dataJson, gameData);
+        gameData.Decode();
         
     }
 
-    public void Load()
+    /// <summary>
+    /// Load the data of the new Scene;
+    /// </summary>
+    public void LoadScene()
     {
-        //load the tip book
-        var tipsBookDataJson = ReadFileIntoJson(TipsBookPath);
-        Debug.Log(tipsBookDataJson);
-        TipsBookData_SO tipsBookData;
-        JsonUtility.FromJsonOverwrite(tipsBookDataJson, TipsBook.Instance.saved_tipsBookData);
-        
-    }
-    public void LoadObj(Object obj, string key)
-    {
-        if (PlayerPrefs.HasKey(key) && obj != null)
-        {
-            JsonUtility.FromJsonOverwrite(PlayerPrefs.GetString(key), obj);
-        }
-    }
-    public void SavePlayerData()
-    {
-        GameManager.Instance.playerStates.gameObject.GetComponent<PlayerController>()?.updateDataIntoStates();
-        //SaveObj(GameManager.Instance.playerStates.gameData, GameManager.Instance.playerStates.gameData.name);
-        PlayerPrefs.SetString("sceneName", SceneController.Instance.currentScene);
-    }
-    public void LoadPlayerData()
-    {
-        //LoadObj(GameManager.Instance.playerStates.gameData, GameManager.Instance.playerStates.gameData.name);
-        isWaitForLoadPlayerdata = false;
+        gameData.LoadSceneData();
     }
 
+    
     public void CreateNewGameData()
     {
-        PlayerPrefs.DeleteAll();
+        //TODO:删除存档
     }
 
-    public void SaveAudioSetting()
-    {
-        var musicSettingData = JsonUtility.ToJson(AudioManager.Instance.audioData);
-        WriteJsonIntoFile(AudioPath, musicSettingData);
-    }
-    public bool LoadAudioSetting()
-    {
-        var musicSettingData = ReadFileIntoJson(AudioPath);
-        if(musicSettingData == string.Empty)
-        {
-            Debug.LogError("No Music Seting File Found");
-            return false;
-        }
-        AudioManager.Instance.audioData = JsonUtility.FromJson<AudioData_SO>(musicSettingData);
-        return true;
-    }
+    /// <summary>
+    /// write the JSON into files.
+    /// </summary>
+    /// <param name="fileLoc">The location of the file</param>
+    /// <param name="content">The JSON format content</param>
+    /// <returns></returns>
     private bool WriteJsonIntoFile(string fileLoc, string content)
     {
         if (content == null) return false;
@@ -118,6 +97,12 @@ public class SavaManager : Singleton<SavaManager>
         Debug.Log(fileLoc);
         return true;
     }
+   
+    /// <summary>
+    /// read the JSON from files.
+    /// </summary>
+    /// <param name="fileLoc">The location of the file</param>
+    /// <returns></returns>
     private string ReadFileIntoJson(string fileLoc)
     {
         string content = string.Empty;
