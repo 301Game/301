@@ -2037,7 +2037,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 64.68421
     y: 67.36842
-    width: 81.249985
+    width: 79.999985
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -3113,7 +3113,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -136.3266
     y: 116.54844
-    width: 144.79163
+    width: 136.24997
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 1
@@ -3691,7 +3691,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 207.33803
     y: 215.24936
-    width: 135.41663
+    width: 132.49997
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4288,7 +4288,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -132.88647
     y: 45.765793
-    width: 166.66663
+    width: 159.99994
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 1
@@ -4319,7 +4319,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 24.75988
     y: 162.65259
-    width: 137.49997
+    width: 132.49997
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4429,7 +4429,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 27.864012
     y: 273.1441
-    width: 121.87497
+    width: 119.99997
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4958,7 +4958,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 211.0218
     y: 394.19656
-    width: 116.66664
+    width: 114.99997
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5111,7 +5111,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 219.96924
     y: 341.56494
-    width: 98.95831
+    width: 96.24998
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5760,7 +5760,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 46.285263
     y: 361.30197
-    width: 97.91664
+    width: 94.999985
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5866,7 +5866,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 211.0222
     y: 163.93353
-    width: 139.5833
+    width: 131.24997
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5941,7 +5941,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 209.44325
     y: 108.67038
-    width: 117.708305
+    width: 113.74997
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8307,12 +8307,12 @@ SpriteRenderer:
   m_SortingLayerID: -1376672989
   m_SortingLayer: 3
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 9d5467cb025af244493b7e9368da5caa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ef5fc4da4af2884982332b03b62d5f4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 172.35643, y: 25.5}
+  m_Size: {x: 68.94257, y: 10.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
