@@ -68,7 +68,6 @@ public class ItemController : MonoBehaviour
            if (chart.HasExecutingBlocks()) return false;
         }
         return true;
-
-      
+ 
     }
 }

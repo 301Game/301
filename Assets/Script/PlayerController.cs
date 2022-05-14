@@ -9,6 +9,7 @@ public class PlayerController : Singleton<PlayerController>
     private static List<System.Type> SetUnMovable = new List<System.Type>(new System.Type[]{
         typeof(PauseMenu),
         typeof(TipsBook),
+        typeof(PasswordLock),
     });
     private float speed = 0.05f;
     private bool is_move = false;
@@ -145,7 +146,9 @@ public class PlayerController : Singleton<PlayerController>
 
     private void SetUnmovable(MonoBehaviour menu)
     {
+        Debug.Log("Menu广播");
         if (SetUnMovable.Contains(menu.GetType())){
+            Debug.Log("人物不可移动");
             isMovable = false;
             StopAnimation();
         }
@@ -153,6 +156,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void SetMovable(MonoBehaviour menu)
     {
+        Debug.Log("人物可移动");
         isMovable = true;
     }
 }

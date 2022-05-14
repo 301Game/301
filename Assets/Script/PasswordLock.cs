@@ -10,8 +10,9 @@ public class PasswordLock : MonoBehaviour
     public GameObject buttonUpPanel;
     public GameObject buttonDownPanel;
     public string targetPassword;
-    public string targetBlock;
 
+    private string m_targetBlock;
+    private string m_booleanVar;
     private GameObject mainPanel;
     private TextMeshProUGUI[] numbers = new TextMeshProUGUI[4];
     private Button[] buttonUps = new Button[4];
@@ -27,7 +28,11 @@ public class PasswordLock : MonoBehaviour
             buttonDowns[i] = buttonDownPanel.transform.GetChild(i).GetComponent<Button>();
         }
     }
-
+    public void Register(string block, string relevant_var)
+    {
+        m_targetBlock = block;
+        m_booleanVar = relevant_var;
+    }
     public void OnBtnUpClicked(int btnIndex)
     {
         int curNum = getCurNum(btnIndex);
@@ -45,6 +50,11 @@ public class PasswordLock : MonoBehaviour
 
     public void OnBtnSureClicked()
     {
+        if(m_targetBlock.Length == 0 || m_booleanVar.Length == 0)
+        {
+            Debug.LogError("密码锁未绑定事件或变量");
+            return;
+        }
         string curStr = "";
         for(int i = 0; i < 4; i++)
         {
@@ -55,9 +65,10 @@ public class PasswordLock : MonoBehaviour
             Hide();
             var flows = FindObjectsOfType<Fungus.Flowchart>();
             foreach (var flow in flows) {
-                if (flow.HasBlock(targetBlock))
+                if (flow.HasBlock(m_targetBlock))
                 {
-                    flow.ExecuteBlock(targetBlock);
+                    flow.SetBooleanVariable(m_booleanVar, true);
+                    flow.ExecuteBlock(m_targetBlock);
                     break;
                 }
             }
@@ -66,7 +77,13 @@ public class PasswordLock : MonoBehaviour
     }
     public void Hide()
     {
+        MenuSignals.DoMenuEnd(this);
         mainPanel.SetActive(false);
+    }
+    public void Show()
+    {
+        MenuSignals.DoMenuShow(this);
+        mainPanel.SetActive(true);
     }
     private int getCurNum(int btnIndex)
     {
