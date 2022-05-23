@@ -1,27 +1,32 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 using System.Collections.Generic;
-//using Fungus;
-//控制角色
+
+[RequireComponent(typeof(PlayerStates))]
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(BoxCollider2D))]
 public class PlayerController : Singleton<PlayerController>
 {
-
     private static List<System.Type> SetUnMovable = new List<System.Type>(new System.Type[]{
         typeof(PauseMenu),
         typeof(TipsBook),
         typeof(PasswordLock),
     });
-    private float speed = 0.05f;
-    private bool is_move = false;
+    private float player_speed = 0.05f;
     private int direction = 0;
     private float horizontal;
     private bool isMovable = true;
 
+    #region animator control variables
+    [SerializeField]private float anim_speed;
+    private float anim_direction;
+    #endregion 
 
+    #region components
     private Rigidbody2D rigidbody2d;
     private Animator animator;
-    
-    [SerializeField]public PlayerStates playerStates;
+    private PlayerStates playerStates;
+    #endregion
     public PlayerStates playerData
     {
         get
@@ -42,8 +47,7 @@ public class PlayerController : Singleton<PlayerController>
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerStates = GetComponent<PlayerStates>();
-       // flowchart = FindObjectOfType<Flowchart>();
-       
+  
     }
     void OnEnable()
     {
@@ -70,43 +74,35 @@ public class PlayerController : Singleton<PlayerController>
         MenuSignals.OnMenuEnd -= SetMovable;
     }
 
+    //get the key enter
     void Update()
     {
         if (!isMovable) return;
         horizontal = Input.GetAxis("Horizontal");
+        if (Mathf.Approximately(horizontal, 0)) anim_speed = 0;
+        else anim_speed = 1;
 
-        if (Mathf.Abs(horizontal) < 0.0000001f)
-        {
-            animator.SetFloat("speed", 0.0f);
-            is_move = false;
-        }
-        else
-        {
-            animator.SetFloat("speed", 1.0f);
-            is_move = true;
-            if (horizontal > 0)
-            {
-                animator.SetFloat("direction", 1.0f);
-                direction = 1;
-            }
-            else
-            {
-                animator.SetFloat("direction", -1.0f);
-                direction = -1;
-            }
-        }
+        if (horizontal > 0) anim_direction = 1;
+        else anim_direction = -1;
 
-        
+        UpdateAnimation();
     }
 
+    //player move
     void FixedUpdate()
     {
         if (!isMovable) return;
         Vector2 position = rigidbody2d.position;
-        if (!is_move) return;
-        position.x = position.x + speed * direction;
+        position.x = position.x + player_speed * anim_direction * anim_speed;
         rigidbody2d.MovePosition(position);
     }
+
+    private void UpdateAnimation()
+    {
+        animator.SetFloat("speed", anim_speed);
+        animator.SetFloat("direction", anim_direction);
+    }
+
     public void updateDataIntoStates()
     {
         float[] position = new float[3];
@@ -114,7 +110,7 @@ public class PlayerController : Singleton<PlayerController>
         position[1] = transform.position.y;
         position[2] = transform.position.z;
         playerStates.position = position;
-        playerStates.lookAtRight = direction > 0 ? true: false;
+        //playerStates.lookAtRight = direction > 0 ? true: false;
     }
     public void loadPlayerData()
     {
@@ -126,14 +122,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         animator.SetFloat("speed", 0f);
     }
-    //private bool isMovable()
-    //{
-    //  //  if (flowchart.HasExecutingBlocks()) return false;
-    //    if (PauseMenu.gameIsPaused) return false;
-    //    if(TipsBook.IsInitialized && TipsBook.Instance.isActive) return false;
-        
-    //    return true;
-    //}
+
     private void SetUnmovable(Fungus.Block block)
     {
         isMovable = false;

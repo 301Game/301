@@ -1289,6 +1289,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5138835247674924692, guid: 5ffacb2063adbce48b0791e8d61a10ed, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5138835247674924695, guid: 5ffacb2063adbce48b0791e8d61a10ed, type: 3}
       propertyPath: m_Name
       value: mother
@@ -1546,7 +1550,6 @@ GameObject:
   - component: {fileID: 1070254750}
   - component: {fileID: 1070254749}
   - component: {fileID: 1070254748}
-  - component: {fileID: 1070254747}
   - component: {fileID: 1070254759}
   - component: {fileID: 1070254757}
   - component: {fileID: 1070254755}
@@ -1564,6 +1567,7 @@ GameObject:
   - component: {fileID: 1070254768}
   - component: {fileID: 1070254764}
   - component: {fileID: 1070254772}
+  - component: {fileID: 1070254747}
   m_Layer: 0
   m_Name: clinic_flow
   m_TagString: Untagged
@@ -1602,7 +1606,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 69
     y: 68.759705
-    width: 108.536575
+    width: 110.759476
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -1642,19 +1646,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 594.13586, y: 22.113775}
+  scrollPos: {x: 614.14197, y: 23.734644}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
-  zoom: 0.8200002
+  zoom: 0.7900002
   scrollViewRect:
     serializedVersion: 2
     x: -343
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 1070254748}
+  selectedBlocks: []
   selectedCommands: []
   variables: []
   description: 
@@ -1934,7 +1937,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1070254746}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c4784f3ced0f43f4b8f0196bce849369, type: 3}
   m_Name: 
@@ -2618,7 +2621,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.0130959
+      value: 2.9978848
       objectReference: {fileID: 0}
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.y
