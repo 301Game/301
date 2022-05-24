@@ -58,7 +58,7 @@ public class TipsBook : Singleton<TipsBook>
 
     public void Resume()
     {
-        Debug.Log("TipsBook ·¢³ö¹ã²¥");
+        Debug.Log("TipsBook ï¿½ï¿½ï¿½ï¿½ï¿½ã²¥");
         MenuSignals.DoMenuShow(this);
         mainPanel.SetActive(true);
         tipBtn.SetActive(false);
@@ -67,7 +67,7 @@ public class TipsBook : Singleton<TipsBook>
 
     public void Hide()
     {
-        Debug.Log("TipsBook ·¢³ö¹ã²¥");
+        Debug.Log("TipsBook ï¿½ï¿½ï¿½ï¿½ï¿½ã²¥");
         MenuSignals.DoMenuEnd(this);
         mainPanel.SetActive(false);
         tipBtn.SetActive(true);

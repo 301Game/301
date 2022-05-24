@@ -48,7 +48,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        Debug.Log("PauseMenu ·¢³ö¹ã²¥End");
+        Debug.Log("PauseMenu ï¿½ï¿½ï¿½ï¿½ï¿½ã²¥End");
         MenuSignals.DoMenuEnd(this);
         PauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
@@ -57,7 +57,7 @@ public class PauseMenu : MonoBehaviour
 
     void Pause()
     {
-        Debug.Log("PauseMenu ·¢³ö¹ã²¥Show");
+        Debug.Log("PauseMenu ï¿½ï¿½ï¿½ï¿½ï¿½ã²¥Show");
         MenuSignals.DoMenuShow(this);
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
