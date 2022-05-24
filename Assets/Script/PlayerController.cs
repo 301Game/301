@@ -11,12 +11,13 @@ public class PlayerController : Singleton<PlayerController>
         typeof(PauseMenu),
         typeof(TipsBook),
         typeof(PasswordLock),
+        typeof(SimpleMenuController),
     });
     private float player_speed = 0.05f;
     private int direction = 0;
     private float horizontal;
     private bool isMovable = true;
-
+    private int moveableLockNum = 0;
     #region animator control variables
     [SerializeField]private float anim_speed;
     private float anim_direction;
@@ -77,13 +78,14 @@ public class PlayerController : Singleton<PlayerController>
     //get the key enter
     void Update()
     {
-        if (!isMovable) return;
+        if (!isMoveable()) return;
         horizontal = Input.GetAxis("Horizontal");
         if (Mathf.Approximately(horizontal, 0)) anim_speed = 0;
         else anim_speed = 1;
 
         if (horizontal > 0) anim_direction = 1;
-        else anim_direction = -1;
+        else if(horizontal < 0)anim_direction = -1;
+        // horizontal = 0 play stop keep the last direction
 
         UpdateAnimation();
     }
@@ -91,7 +93,7 @@ public class PlayerController : Singleton<PlayerController>
     //player move
     void FixedUpdate()
     {
-        if (!isMovable) return;
+        if (!isMoveable()) return;
         Vector2 position = rigidbody2d.position;
         position.x = position.x + player_speed * anim_direction * anim_speed;
         rigidbody2d.MovePosition(position);
@@ -125,27 +127,42 @@ public class PlayerController : Singleton<PlayerController>
 
     private void SetUnmovable(Fungus.Block block)
     {
-        isMovable = false;
-        StopAnimation();
+        Debug.Log("Block "+ block.BlockName + " 广播,人物不可移动锁+1");
+        AddMovableLock();
     }
     private void SetMoable(Fungus.Block block)
     {
-        isMovable = true;
+        Debug.Log("Block" + block.BlockName + " 广播,人物不可移动锁-1");
+        ReduceMovableLock();
     }
-
+    private bool isMoveable()
+    {
+        return moveableLockNum <= 0;
+    }
+    private void AddMovableLock()
+    {
+        moveableLockNum++;
+        StopAnimation();
+    }
+    private void ReduceMovableLock()
+    {
+        moveableLockNum--;
+    }
     private void SetUnmovable(MonoBehaviour menu)
     {
-        Debug.Log("Menu广播");
+        Debug.Log("Menu广播,人物不可移动锁+1");
         if (SetUnMovable.Contains(menu.GetType())){
-            Debug.Log("人物不可移动");
-            isMovable = false;
-            StopAnimation();
+            AddMovableLock();
         }
     }
 
     private void SetMovable(MonoBehaviour menu)
     {
-        Debug.Log("人物可移动");
-        isMovable = true;
+        Debug.Log("人物可移动，人物可移动锁-1");
+        if (SetUnMovable.Contains(menu.GetType()))
+        {
+            ReduceMovableLock();
+        }
+        
     }
 }

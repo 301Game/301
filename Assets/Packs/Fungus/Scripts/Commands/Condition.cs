@@ -219,6 +219,7 @@ namespace Fungus
                     {
                         // Last command in Block, so stop
                         StopParentBlock();
+                        return;
                     }
                     else
                     {
