@@ -220,7 +220,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &233553609
 PrefabInstance:
@@ -397,7 +397,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 270224858}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843212206}
+        m_TargetAssemblyTypeName: RadioPassword, Assembly-CSharp
+        m_MethodName: OnNumBtnClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &270224858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,7 +529,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 293056138}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843212206}
+        m_TargetAssemblyTypeName: RadioPassword, Assembly-CSharp
+        m_MethodName: OnNumBtnClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &293056138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,7 +690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5680732522376762457, guid: 12921ef5e4bb162489e4ba08e64392a3, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5680732522376762457, guid: 12921ef5e4bb162489e4ba08e64392a3, type: 3}
       propertyPath: m_AnchorMax.x
@@ -763,7 +787,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7533212676542459051, guid: cba7b4c9446c9944f96b8a56c51c3d64, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7533212676542459051, guid: cba7b4c9446c9944f96b8a56c51c3d64, type: 3}
       propertyPath: m_LocalPosition.x
@@ -907,7 +931,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 662487449}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843212206}
+        m_TargetAssemblyTypeName: RadioPassword, Assembly-CSharp
+        m_MethodName: OnNumBtnClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &662487449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1398,7 +1434,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 917999857}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843212206}
+        m_TargetAssemblyTypeName: RadioPassword, Assembly-CSharp
+        m_MethodName: OnNumBtnClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &917999857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1616,9 +1664,6 @@ GameObject:
   - component: {fileID: 952113614}
   - component: {fileID: 952113612}
   - component: {fileID: 952113611}
-  - component: {fileID: 952113616}
-  - component: {fileID: 952113615}
-  - component: {fileID: 952113613}
   - component: {fileID: 952113617}
   - component: {fileID: 952113618}
   m_Layer: 0
@@ -1698,7 +1743,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 762.1616, y: 62.02629}
+  scrollPos: {x: 676.2241, y: 65.15129}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 281.66666
@@ -1735,7 +1780,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &952113609
 MonoBehaviour:
@@ -1798,7 +1843,7 @@ MonoBehaviour:
   indentLevel: 0
   images:
   - {fileID: 562151174}
-  sprite: {fileID: 21300000, guid: 5cf0bb7f96e62c342a96a5a74f20bb05, type: 3}
+  sprite: {fileID: 21300000, guid: 509e0c013059dc74899b8d2601cc6a0a, type: 3}
 --- !u!114 &952113611
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1806,7 +1851,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952113604}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec422cd568a9c4a31ad7c36d0572b9da, type: 3}
   m_Name: 
@@ -1851,57 +1896,9 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 952113616}
-  - {fileID: 952113615}
   - {fileID: 952113611}
-  - {fileID: 952113613}
   - {fileID: 952113617}
   suppressAllAutoSelections: 0
---- !u!114 &952113613
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952113604}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 10
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 1295271940}
-  targetComponentAssemblyName: CGFader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: CGFader
-  targetMethod: Hide
-  targetMethodText: 'Hide (Single): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Single
-      intValue: 0
-      boolValue: 0
-      floatValue: 0
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &952113614
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1947,68 +1944,6 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
---- !u!114 &952113615
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952113604}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 9
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 1295271940}
-  targetComponentAssemblyName: CGFader, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: CGFader
-  targetMethod: Show
-  targetMethodText: 'Show (Single): Void'
-  methodParameters:
-  - objValue:
-      typeAssemblyname: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
-        PublicKeyToken=b77a5c561934e089
-      typeFullname: System.Single
-      intValue: 0
-      boolValue: 0
-      floatValue: 0.25
-      stringValue: 
-      colorValue: {r: 0, g: 0, b: 0, a: 0}
-      gameObjectValue: {fileID: 0}
-      materialValue: {fileID: 0}
-      objectValue: {fileID: 0}
-      spriteValue: {fileID: 0}
-      textureValue: {fileID: 0}
-      vector2Value: {x: 0, y: 0}
-      vector3Value: {x: 0, y: 0, z: 0}
-    variableKey: 
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
---- !u!114 &952113616
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 952113604}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82e4c082f762243f6943909a4272096d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 8
-  indentLevel: 0
-  images:
-  - {fileID: 562151174}
-  sprite: {fileID: 21300000, guid: d431135116b370d499e87c98c915d400, type: 3}
 --- !u!114 &952113617
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2194,7 +2129,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1024017487}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843212206}
+        m_TargetAssemblyTypeName: RadioPassword, Assembly-CSharp
+        m_MethodName: OnEndBtnClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1024017487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2485,7 +2432,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1224624368}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843212206}
+        m_TargetAssemblyTypeName: RadioPassword, Assembly-CSharp
+        m_MethodName: OnNumBtnClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1224624368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2605,7 +2564,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1231942072}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843212206}
+        m_TargetAssemblyTypeName: RadioPassword, Assembly-CSharp
+        m_MethodName: OnNumBtnClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1231942072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3257,7 +3228,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1746597618}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843212206}
+        m_TargetAssemblyTypeName: RadioPassword, Assembly-CSharp
+        m_MethodName: OnNumBtnClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1746597618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3377,7 +3360,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1790072666}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843212206}
+        m_TargetAssemblyTypeName: RadioPassword, Assembly-CSharp
+        m_MethodName: OnNumBtnClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 9
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1790072666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3751,7 +3746,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1887067175}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843212206}
+        m_TargetAssemblyTypeName: RadioPassword, Assembly-CSharp
+        m_MethodName: OnPlayBtnClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1887067175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3807,7 +3814,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1900286161
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3908,7 +3915,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1908409278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f435b9076be69bc4188292f107977b2d, type: 3}
+  m_Script: {fileID: 11500000, guid: fa308ab62769de846a47dd3853b8d8d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tipIconPrefab: {fileID: 2912493771837861791, guid: a272bdefcf3afca4d8a2db1c8a9b5848, type: 3}
@@ -3931,7 +3938,6 @@ MonoBehaviour:
           m_StringArgument: ticket
           m_BoolArgument: 0
         m_CallState: 2
-  ticket: {fileID: 5036746321646813738, guid: 70cfa3c828031f6489fb63251dc22bec, type: 3}
 --- !u!61 &1908409281
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3958,6 +3964,103 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.6642864, y: 1.6300507}
   m_EdgeRadius: 0
+--- !u!1001 &1923906615
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4310882365044514418, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_Name
+      value: Tips Book UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4310882365044514422, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2fc8086e2f9f9924487915188835fce7, type: 3}
 --- !u!1 &2010444811
 GameObject:
   m_ObjectHideFlags: 0
@@ -4203,7 +4306,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2063697155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843212206}
+        m_TargetAssemblyTypeName: RadioPassword, Assembly-CSharp
+        m_MethodName: OnNumBtnClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2063697155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4323,7 +4438,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2101191317}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1843212206}
+        m_TargetAssemblyTypeName: RadioPassword, Assembly-CSharp
+        m_MethodName: OnNumBtnClicked
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2101191317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4404,7 +4531,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2134666022
 PrefabInstance:
