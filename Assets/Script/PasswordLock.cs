@@ -19,7 +19,7 @@ public class PasswordLock : MonoBehaviour
     private Button[] buttonDowns = new Button[4];
     private void Awake()
     {
-        if (numberPanel == null | buttonDownPanel == null || buttonUpPanel == null) Debug.LogError("ÃÜÂëËøÅäÖÃ²»ÍêÕû");
+        if (numberPanel == null | buttonDownPanel == null || buttonUpPanel == null) Debug.LogError("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½");
         mainPanel = transform.GetChild(0).gameObject;
         for (int i = 0; i < 4; i++)
         {
@@ -52,7 +52,7 @@ public class PasswordLock : MonoBehaviour
     {
         if(m_targetBlock.Length == 0 || m_booleanVar.Length == 0)
         {
-            Debug.LogError("ÃÜÂëËøÎ´°ó¶¨ÊÂ¼ş»ò±äÁ¿");
+            Debug.LogError("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Î´ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
             return;
         }
         string curStr = "";

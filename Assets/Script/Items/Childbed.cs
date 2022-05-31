@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Childbed : ItemController
 {
-    public GameObject ticket;
+    //public GameObject ticket;
     //private void Update()
     //{
     //    if (hasPlayer && Input.GetKeyDown(KeyCode.F) && !CGManager.isShow)

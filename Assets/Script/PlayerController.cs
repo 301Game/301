@@ -12,6 +12,7 @@ public class PlayerController : Singleton<PlayerController>
         typeof(TipsBook),
         typeof(PasswordLock),
         typeof(SimpleMenuController),
+        typeof(RadioPassword),
     });
     private float player_speed = 0.05f;
     private int direction = 0;
