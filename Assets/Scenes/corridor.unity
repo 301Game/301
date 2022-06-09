@@ -659,8 +659,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 48.000004
-    y: 59.72729
+    x: 74.58228
+    y: 42.00577
     width: 79.36708
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -730,7 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 347.84378, y: 211.93605}
+  scrollPos: {x: 431.38782, y: 70.163864}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -817,7 +817,7 @@ MonoBehaviour:
   conditions:
   - compareOperator: 0
     anyVar:
-      variable: {fileID: 42854158}
+      variable: {fileID: 42854150}
       data:
         animatorData:
           animatorRef: {fileID: 0}
@@ -827,7 +827,7 @@ MonoBehaviour:
           audioSourceVal: {fileID: 0}
         booleanData:
           booleanRef: {fileID: 0}
-          booleanVal: 1
+          booleanVal: 0
         collectionData:
           collectionRef: {fileID: 0}
           collectionVal: {fileID: 0}
@@ -1096,7 +1096,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 94957711}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.72, y: 0, z: 0}
+  m_LocalPosition: {x: -1.7, y: -1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578827797}
@@ -1497,11 +1497,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.692358
+      value: 1.6866598
       objectReference: {fileID: 0}
     - target: {fileID: 1237409664718536114, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.44604
+      value: -8.4460335
       objectReference: {fileID: 0}
     - target: {fileID: 1237409664933998076, guid: a24ef8b63e4379042bdff1e8b4da534c, type: 3}
       propertyPath: m_BoundingShape2D
@@ -2154,6 +2154,10 @@ PrefabInstance:
       value: livingRoom
       objectReference: {fileID: 0}
     - target: {fileID: 5505588560723753376, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
+      propertyPath: destinationType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505588560723753376, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
       propertyPath: trasitionSceneName
       value: livingRoom
       objectReference: {fileID: 0}
@@ -2492,7 +2496,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1658371207}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.78, y: 0, z: 0}
+  m_LocalPosition: {x: 0.78, y: -0.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578827797}
@@ -2717,9 +2721,17 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: -0.16336632
       objectReference: {fileID: 0}
+    - target: {fileID: 5505588560723753376, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
+      propertyPath: destinationType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505588560723753376, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
+      propertyPath: trasitionSceneName
+      value: bathRoom
+      objectReference: {fileID: 0}
     - target: {fileID: 7020775787356298860, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}
       propertyPath: type
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9f2085c836f6ea408bbf10ab7c8eb0b, type: 3}

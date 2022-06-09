@@ -5,6 +5,7 @@ using Fungus;
 
 public class TipsBook : Singleton<TipsBook>
 {
+    
     public GameObject mainPanel;
     public GameObject tipBtn;
     public GameObject ItemList;
@@ -13,7 +14,7 @@ public class TipsBook : Singleton<TipsBook>
     public GameObject ItemPrefab;
 
     public bool isActive;
-
+    private const float imgHeight = 300f;
     private TipsBookData tipsBookData = new TipsBookData();
   
     public TipsBookData Tips { get { return tipsBookData; } set { tipsBookData = value; } }
@@ -50,15 +51,19 @@ public class TipsBook : Singleton<TipsBook>
         if (item.ItemImg == null) ItemInfImg.enabled = false;
         else
         {
+            int raw_width = item.ItemImg.texture.width;
+            int raw_height = item.ItemImg.texture.height;
             ItemInfImg.sprite = item.ItemImg;
-            ItemInfImg.SetNativeSize();
+            float scaling = raw_height / imgHeight;
+            float imgWidth = raw_width / scaling;
+            ItemInfImg.rectTransform.sizeDelta = new Vector2(imgWidth, imgHeight);
+            
         }
         
     }
 
     public void Resume()
     {
-        Debug.Log("TipsBook �����㲥");
         MenuSignals.DoMenuShow(this);
         mainPanel.SetActive(true);
         tipBtn.SetActive(false);
@@ -67,7 +72,6 @@ public class TipsBook : Singleton<TipsBook>
 
     public void Hide()
     {
-        Debug.Log("TipsBook �����㲥");
         MenuSignals.DoMenuEnd(this);
         mainPanel.SetActive(false);
         tipBtn.SetActive(true);

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b7d6ceae1e0c0a449cb0561db856ab6, type: 3}
-  m_Name: Supermarket_ItemsList
+  m_Name: FruitDrops
   m_EditorClassIdentifier: 
-  ItemTitle: "\u7269\u54C1\u6E05\u5355"
-  ItemDesc: "\u6E05\u5355\u4E0A\u5199\u7740\uFF1A\u6D17\u8863\u7C89\u3001\u9999\u7682\u3001\u6C34\u679C\u786C\u7CD6\u3002"
-  ItemImg: {fileID: 21300000, guid: 56576a780282cf1469d1e7c5ec16b2f5, type: 3}
+  ItemTitle: "\u6C34\u679C\u786C\u7CD6"
+  ItemDesc: "\u9178\u9178\u751C\u751C\u7684\u6C34\u679C\u786C\u7CD6\u3002"
+  ItemImg: {fileID: 21300000, guid: be4956655b7c35a48a24409f3626dbe4, type: 3}
