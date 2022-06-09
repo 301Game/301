@@ -31,6 +31,7 @@ public class DialogBox : Singleton<DialogBox>
     /// <param name="waitTime">The time of the content's show time</param>
     public void Say(string content, float fadeDuration, float waitTime)
     {
+        transform.parent.GetComponent<PlayerController>()?.hideAllIcon();
         dialogText.SetText(content);
         Debug.Log("设置文本成功");
         m_fadeDuration = fadeDuration;
@@ -56,6 +57,10 @@ public class DialogBox : Singleton<DialogBox>
            }).setOnComplete(() =>
            {
                dialogText.text = "";
-           });
+           }).setOnComplete(
+            () =>
+            {
+                transform.parent.GetComponent<PlayerController>()?.updateIcon();
+            });
     }
 }

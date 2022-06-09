@@ -5,13 +5,18 @@ using UnityEngine.Events;
 using Fungus;
 using UnityEngine.Serialization;
 
+public enum IconType
+{
+    DOOR,
+    SEARCH,
+}
 public class ItemController : MonoBehaviour
 {
     public GameObject tipIconPrefab;
 
     protected bool hasPlayer;
-    private GameObject tipIcon;
     public ItemData_SO itemData;
+    public IconType iconType;
 
     [FormerlySerializedAs("OnEnterKeyDown")]
     [SerializeField]
@@ -21,32 +26,9 @@ public class ItemController : MonoBehaviour
     [SerializeField]
     protected UnityEvent interKeyEvents = new UnityEvent();
 
-
-    protected void OnTriggerExit2D(Collider2D collision)
-    {
-        hasPlayer = false;
-        Destroy(tipIcon);
-    }
-
     protected void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
-        {
-            if(tipIconPrefab != null) 
-                tipIcon = Instantiate(tipIconPrefab, new Vector2(transform.position.x, 0.5f), Quaternion.identity, transform);
-        
-            hasPlayer = true;
-            if (enterEvents != null) enterEvents.Invoke();
-        }
-        
-    }
-
-    protected void Update()
-    {
-        if (hasPlayer && Input.GetKeyDown(KeyCode.F) && isInteractive())
-        {
-            interKeyEvents.Invoke();
-        }
+       if (enterEvents != null) enterEvents.Invoke();
     }
 
     public void AddItem()
@@ -69,5 +51,10 @@ public class ItemController : MonoBehaviour
         }
         return true;
  
+    }
+
+    public void Interact()
+    {
+        interKeyEvents.Invoke();
     }
 }

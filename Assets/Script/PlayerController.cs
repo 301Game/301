@@ -14,6 +14,9 @@ public class PlayerController : Singleton<PlayerController>
         typeof(SimpleMenuController),
         typeof(RadioPassword),
     });
+
+    private List<GameObject> targetObj = new List<GameObject>();
+    private GameObject iconRoot;
     private float player_speed = 0.05f;
     private int direction = 0;
     private float horizontal;
@@ -49,7 +52,8 @@ public class PlayerController : Singleton<PlayerController>
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerStates = GetComponent<PlayerStates>();
-  
+        iconRoot = transform.Find("TipIcon").gameObject;
+
     }
     void OnEnable()
     {
@@ -62,10 +66,25 @@ public class PlayerController : Singleton<PlayerController>
         MenuSignals.OnMenuShow += SetUnmovable;
         MenuSignals.OnMenuEnd += SetMovable;
     }
-    void Start()
+
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Interactive"))
+        {
+            targetObj.Insert(0, collision.gameObject);
+            updateIcon();
+        }
     }
 
+    protected void OnTriggerExit2D(Collider2D collision)
+    {
+
+        if (collision.CompareTag("Interactive"))
+        {
+            targetObj.Remove(collision.gameObject);
+            updateIcon();
+        }
+    }
     private void OnDisable()
     {
         GameManagerSignals.OnSaveGame -= updateDataIntoStates;
@@ -89,6 +108,10 @@ public class PlayerController : Singleton<PlayerController>
         // horizontal = 0 play stop keep the last direction
 
         UpdateAnimation();
+        if(targetObj.Count > 0 && Input.GetKeyDown(KeyCode.F))
+        {
+            targetObj[0].GetComponent<ItemController>()?.Interact();
+        }
     }
 
     //player move
@@ -165,5 +188,37 @@ public class PlayerController : Singleton<PlayerController>
             ReduceMovableLock();
         }
         
+    }
+
+    public void updateIcon()
+    {
+        if (targetObj.Count == 0) {
+            hideAllIcon();
+            return;
+        }
+        showIcon(targetObj[0].GetComponent<ItemController>()?.iconType);
+    }
+    private void showIcon(IconType? type)
+    {
+        if (type == null) return;
+        hideAllIcon();
+        switch (type)
+        {
+            case IconType.DOOR:
+                iconRoot.transform.GetChild(0).gameObject.SetActive(true);
+                break;
+            case IconType.SEARCH:
+                iconRoot.transform.GetChild(1).gameObject.SetActive(true);
+                break;
+        }
+    }
+
+    public void hideAllIcon()
+    {
+        int iconNum = iconRoot.transform.childCount;
+        for(int n = 0; n < iconNum; n++)
+        {
+            iconRoot.transform.GetChild(n).gameObject.SetActive(false);
+        }
     }
 }

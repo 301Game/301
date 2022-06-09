@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Confiner
   - Icon
+  - Interactive
   layers:
   - Default
   - TransparentFX
