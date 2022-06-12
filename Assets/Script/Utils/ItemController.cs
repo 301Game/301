@@ -25,7 +25,17 @@ public class ItemController : MonoBehaviour
     [FormerlySerializedAs("onInterKeyDown")]
     [SerializeField]
     protected UnityEvent interKeyEvents = new UnityEvent();
+    protected void OnEnable()
+    {
+        //GameManagerSignals.OnSaveGame += SaveTag;
+        //GameManagerSignals.OnLoadGameLoaded += GetTag;
+    }
 
+    protected void OnDisable()
+    {
+        //GameManagerSignals.OnSaveGame -= SaveTag;
+        //GameManagerSignals.OnLoadGameLoaded -= GetTag;
+    }
     protected void OnTriggerEnter2D(Collider2D collision)
     {
        if (enterEvents != null) enterEvents.Invoke();
@@ -56,5 +66,15 @@ public class ItemController : MonoBehaviour
     public void Interact()
     {
         interKeyEvents.Invoke();
+    }
+
+    public void SwitchToInter()
+    {
+        gameObject.tag = "Interactive";
+    }
+   
+    public void SwitchToUninter()
+    {
+        gameObject.tag = "Untagged";
     }
 }

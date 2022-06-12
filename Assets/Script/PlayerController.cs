@@ -78,12 +78,8 @@ public class PlayerController : Singleton<PlayerController>
 
     protected void OnTriggerExit2D(Collider2D collision)
     {
-
-        if (collision.CompareTag("Interactive"))
-        {
-            targetObj.Remove(collision.gameObject);
-            updateIcon();
-        }
+        targetObj.Remove(collision.gameObject);
+        updateIcon();
     }
     private void OnDisable()
     {

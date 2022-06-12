@@ -9,6 +9,7 @@ public class SceneData
 {
     public string sceneName;
     public List<FlowchartData> flowchartData = new List<FlowchartData>();
+    public List<TagData> tagData = new List<TagData>();
 
     public SceneData()
     {
@@ -24,6 +25,12 @@ public class SceneData
             if (item.name.Equals(SaveData.GlobalVariableFlowChartName)) continue;
             flowchartData.Add(FlowchartData.Encode(item));
         }
+
+        var items = GameObject.FindObjectsOfType<ItemController>();
+        foreach(var item in items)
+        {
+            tagData.Add(TagData.Encode(item.gameObject));
+        }
     }
     public void Decode()
     {
@@ -31,7 +38,10 @@ public class SceneData
         {
             FlowchartData.Decode(itemData);
         }
-        
+        foreach(var tag in tagData)
+        {
+            TagData.Decode(tag);
+        }
     }
 
 }
